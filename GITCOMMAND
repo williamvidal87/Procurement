@@ -1,0 +1,5 @@
+git status
+git add .
+git commit -m "new update"
+git pull origin develop
+git add .
