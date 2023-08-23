@@ -21,6 +21,7 @@ class DashBoard extends Component
     
     public function mount()
     {
+        //sample commit
         date_default_timezone_set('Asia/Manila');
         $YearNow= date('Y') ;
         $InsertBudget=InsertBudget::whereYear('created_at',$YearNow)->get();
