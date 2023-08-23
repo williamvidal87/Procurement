@@ -5,22 +5,22 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="name">Full Name</label>
+                <label for="name">Full Name (*)</label>
                 <input type="text" class="form-control" id="name" wire:model="name" placeholder="Last Name, First name">
                 @error('name') <span style="color: red">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="email_address">Email Address</label>
+                <label for="email_address">Email Address  (*)</label>
                 <input type="text" class="form-control" id="email_address" wire:model="email_address" placeholder="Email Address">
                 @error('email_address') <span style="color: red">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="phone_number">Phone Number</label>
+                <label for="phone_number">Phone Number  (*)</label>
                 <input type="text" class="form-control" id="phone_number" wire:model="phone_number" placeholder="Phone Number">
                 @error('phone_number') <span style="color: red">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="email">User Name</label>
+                <label for="email">User Name  (*)</label>
                 <input type="text" class="form-control" id="email" wire:model="email" placeholder="User Name">
                 @error('email') <span style="color: red">{{ $message }}</span> @enderror
             </div>
@@ -37,12 +37,12 @@
                 </div>
             @else
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Password  (*)</label>
                     <input type="password" class="form-control" id="password" wire:model="password" placeholder="Password">
                     @error('password') <span style="color: red">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <label for="confirmpassword">Confirm Password</label>
+                    <label for="confirmpassword">Confirm Password  (*)</label>
                     <input type="password" class="form-control" id="confirmpassword" wire:model="confirmpassword" placeholder=" Confirm Password">
                     @error('confirmpassword') <span style="color: red">{{ $message }}</span> @enderror
                 </div>
