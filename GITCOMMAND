@@ -3,3 +3,10 @@ git add .
 git commit -m "new update"
 git pull origin develop
 git add .
+
+
+"SEED"
+php artisan db:seed --class=User1Seed
+php artisan db:seed --class=User2Seed
+php artisan db:seed --class=User3Seed
+php artisan db:seed --class=User4Seed
