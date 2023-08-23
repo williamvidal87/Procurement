@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\InsertBudget;
 use App\Models\OfficeItem;
 use Illuminate\Database\Seeder;
 
@@ -22,9 +23,12 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'pcs',
-            'item_description' => "Ballpen, Black (0.5mm), Good Quality",
-            'qty' => 15,
-            'estimated_cost' =>  24.00,
+            'item_description' => "Ballpen, Black (0.5mm), Good Quality				
+            ",
+            'qty' => 15
+            ,
+            'estimated_cost' =>   24.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
@@ -32,9 +36,25 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'reams',
-            'item_description' => "Bondpaper, Multi-Copy, Size: Legal ,70 gsm, Sub 20",
-            'qty' => 35,
-            'estimated_cost' => 300,
+            'item_description' => "Bondpaper, Multi-Copy, Size: A4 ,70 gsm, Sub 20				
+            ",
+            'qty' => 50
+            ,
+            'estimated_cost' =>   252.00 
+            ,
+            ],
+            [
+            'quarter_id' => 3, 
+            'user_id' => 9,
+            'category_id' => 1,
+            'item_no' => 1,
+            'unit_measure' => 'reams',
+            'item_description' => "Bondpaper, Multi-Copy, Size: Legal ,70 gsm, Sub 20				
+            ",
+            'qty' => 100
+            ,
+            'estimated_cost' =>   300.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
@@ -42,9 +62,11 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
-            'item_description' => "ENVELOPE, Expanding, Kraft (100 pcs per box) ",
+            'item_description' => "ENVELOPE, Documentary, Legal (500 pcs per box)				
+            ",
             'qty' => 1,
-            'estimated_cost' => 1800,
+            'estimated_cost' =>   1800.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
@@ -52,9 +74,11 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
-            'item_description' => "FOLDER, White, Size: Legal",
-            'qty' => 2,
-            'estimated_cost' => 840,
+            'item_description' => "ENVELOPE, Expanding, Kraft (100 pcs per box) 				
+            ",
+            'qty' => 1,
+            'estimated_cost' =>   1800.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
@@ -62,29 +86,37 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
-            'item_description' => "PENCIL, lead, with eraser, #2 (12 pcs per box), Good Quality",
-            'qty' => 2,
-            'estimated_cost' => 115,
+            'item_description' => "FOLDER, White, Size: Legal				
+            ",
+            'qty' => 2
+            ,
+            'estimated_cost' =>   840.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
             'user_id' => 9,
             'category_id' => 1,
             'item_no' => 1,
-            'unit_measure' => 'pcs',
-            'item_description' => "Permanent Marking Pen, Black",
-            'qty' => 10,
-            'estimated_cost' => 100,
+            'unit_measure' => 'box',
+            'item_description' => "PENCIL, lead, with eraser, #2 (12 pcs per box), Good Quality				
+            ",
+            'qty' => 1,
+            'estimated_cost' =>   115.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
             'user_id' => 9,
             'category_id' => 1,
             'item_no' => 1,
-            'unit_measure' => 'bottle',
-            'item_description' => "Permanent Marking Pen, Ink Refill",
-            'qty' => 5,
-            'estimated_cost' => 85,
+            'unit_measure' => 'set',
+            'item_description' => "Printer Ink for EPSON L220 (C,M,Y,BK) 				
+            ",
+            'qty' => 5
+            ,
+            'estimated_cost' =>   1680.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
@@ -92,23 +124,40 @@ class User1Seed extends Seeder
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'book',
-            'item_description' => "RECORD BOOK, 500 pages ",
-            'qty' => 15,
-            'estimated_cost' =>  250.00,
+            'item_description' => "RECORD BOOK, 500 pages 				
+            ",
+            'qty' => 5
+            ,
+            'estimated_cost' =>   144.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
             'user_id' => 9,
             'category_id' => 1,
             'item_no' => 1,
-            'unit_measure' => 'pcs',
-            'item_description' => "Ruler, Steel",
-            'qty' => 5,
-            'estimated_cost' => 125,
+            'unit_measure' => 'bottle',
+            'item_description' => "STAMP PAD INK, purple or violet				
+            ",
+            'qty' => 3
+            ,
+            'estimated_cost' =>   60.00 
+            ,
             ],
-            
-            
-            
+            [
+            'quarter_id' => 3, 
+            'user_id' => 9,
+            'category_id' => 1,
+            'item_no' => 1,
+            'unit_measure' => 'box
+            ',
+            'item_description' => "STAPLE WIRE for heavy duty stapler				
+            ",
+            'qty' => 15
+            ,
+            'estimated_cost' =>   102.00 
+            ,
+            ],
             
             
             
@@ -119,59 +168,18 @@ class User1Seed extends Seeder
             'user_id' => 9,
             'category_id' => 2,
             'item_no' => 1,
-            'unit_measure' => 'unit',
-            'item_description' => "Portable Welding Maching	Specs: Frequency: 50/60 Hz Absorbed power: 6.1 KVA EN60974-1 Max X%/12max: 6/180 A Service factor: 160 A @ 55% Minimum electrode: Ø 1.6mm Maximum electrode: Ø 4 mm",
-            'qty' => 1,
-            'estimated_cost' =>  25000,
-            ],
-            [
-            'quarter_id' => 3, 
-            'user_id' => 9,
-            'category_id' => 2,
-            'item_no' => 1,
-            'unit_measure' => 'unit',
-            'item_description' => "Tape Measure (Medium) 5M - 16X19MM				
+            'unit_measure' => 'unit
+            ',
+            'item_description' => "Digital Photocopying Machine, Colored, Heavy Duty				
             Specs:				
-            Extra large hook				
-            Size: 16Ft./5M				
-            Nylon coated tape for increased blade life				
-            Impact resistent bi-material non-slip case				
+            Supported Paper Size: A4, A3, Legal, Short				
+            with free delivery & installation				
+            with 1 year warranty				
             ",
             'qty' => 1,
-            'estimated_cost' =>  350,
+            'estimated_cost' =>   120000.00 
+            ,
             ],
-            [
-            'quarter_id' => 3, 
-            'user_id' => 9,
-            'category_id' => 2,
-            'item_no' => 1,
-            'unit_measure' => 'unit',
-            'item_description' => "Precision Screwdriver Bit Set (44 pcs or more)				
-            Specs:				
-            with 1-pc precision screwdriver handle      				
-            with 1-pc 60 mm extension bar 				
-            ",
-            'qty' => 1,
-            'estimated_cost' =>  1500,
-            ],
-            [
-            'quarter_id' => 3, 
-            'user_id' => 9,
-            'category_id' => 2,
-            'item_no' => 1,
-            'unit_measure' => 'unit',
-            'item_description' => "Circular Saw 1600W 7.5				
-            Specs:				
-            24-tooth TCT blade				
-            Heavy duty kit box included for convenient storage				
-            ",
-            'qty' => 1,
-            'estimated_cost' =>  6500,
-            ],
-            
-            
-            
-            
             
             
             
@@ -183,11 +191,12 @@ class User1Seed extends Seeder
             'category_id' => 3,
             'item_no' => 1,
             'unit_measure' => 'lot',
-            'item_description' => "Construction of 1 Storey Building for Buildings & Grounds Maintenance Office",
+            'item_description' => "Repair / Rehabilitaiton / Improvement of Existing Supply Property Management Office (SPMO)				
+            ",
             'qty' => 1,
-            'estimated_cost' => 7500000,
+            'estimated_cost' =>   3500000.00 
+            ,
             ],
-            
             
             
             
@@ -198,11 +207,43 @@ class User1Seed extends Seeder
             'user_id' => 9,
             'category_id' => 4,
             'item_no' => 1,
-            'unit_measure' => 'lot',
-            'item_description' => "Repairs & Maintenance of Roofing  (Various Building & Offices)",
+            'unit_measure' => 'package',
+            'item_description' => "Repair of Defective Office Printer (3 EPSON L220, 4 EPSON 3110)				
+            Inclusion:				
+            Repair Materials/Parts, Labor, Clean-up / Installation				
+            ",
             'qty' => 1,
-            'estimated_cost' => 850000,
+            'estimated_cost' =>   25000.00 
+            ,
             ],
+            
+            
+            
+            
+            
+            [
+            'quarter_id' => 3, 
+            'user_id' => 9,
+            'category_id' => 5,
+            'item_no' => 1,
+            'unit_measure' => 'unit',
+            'item_description' => "Office Table with Drawers (Wooden)				
+            Specs:				
+            Dimension: W120 x D60 x H75 cm				
+            Material: MDF board				
+            – With center and both side drawers and cabinet				
+            – Locking system with key included				
+            ",
+            'qty' => 3
+            ,
+            'estimated_cost' =>   8500.00 
+            ,
+            ],
+            
+            
+            
+            
+            
             
             
             
@@ -214,33 +255,98 @@ class User1Seed extends Seeder
             'user_id' => 9,
             'category_id' => 6,
             'item_no' => 1,
-            'unit_measure' => 'liters',
-            'item_description' => "Gasoline - Premium (For Grasscutter)",
-            'qty' => 450,
-            'estimated_cost' => 125,
+            'unit_measure' => 'unit',
+            'item_description' => "Plastic Pallet for NORSU-G Dropside Vehicle				
+            Specs:				
+            Size: 43x43				
+            Color: Black				
+            Floor Capacity: 30,000 lbs				
+            ",
+            'qty' => 10
+            ,
+            'estimated_cost' =>   4700.00 
+            ,
             ],
             [
             'quarter_id' => 3, 
             'user_id' => 9,
             'category_id' => 6,
             'item_no' => 1,
-            'unit_measure' => 'bottle',
-            'item_description' => "2T Oil, 200ml",
-            'qty' => 150,
-            'estimated_cost' => 95,
-            ],
-            [
-            'quarter_id' => 3, 
-            'user_id' => 9,
-            'category_id' => 6,
-            'item_no' => 1,
-            'unit_measure' => 'kilo',
-            'item_description' => "Nylon String #100",
-            'qty' => 15,
-            'estimated_cost' => 350,
+            'unit_measure' => 'pcs',
+            'item_description' => "Waterproof Canvass (Lona Trapal - With eyelet)				
+            Specs:				
+            Color: Black				
+            Size: 10 x 10 Ft				
+            ",
+            'qty' => 3
+            ,
+            'estimated_cost' =>   2800.00 
+            ,
             ],
         ];
         
         OfficeItem::insert($officeitem);
+        
+        
+        
+        date_default_timezone_set('Etc/GMT-8');
+        $isert_budget = [
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '1',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  59185.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '2',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  120000.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '3',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  3500000.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '4',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  25000.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '5',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  25500.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '9',
+            'item_category_id' => '6',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' =>  55400.00,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+        ];
+
+        InsertBudget::insert($isert_budget);
     }
 }

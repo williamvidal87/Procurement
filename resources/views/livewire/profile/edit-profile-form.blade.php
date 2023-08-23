@@ -55,28 +55,28 @@
     
             <!-- Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-jet-label for="name" value="{{ __('Full Name (*)') }}" />
+                <x-jet-label for="name">Full Name  (<span class="text-danger">*</span>)</x-jet-label>
                 <x-jet-input id="name" type="text" class="block w-full mt-1" wire:model.defer="state.name" autocomplete="name" />
                 <x-jet-input-error for="name" class="mt-2" />
             </div>
     
             <!-- Email Address -->
             <div class="col-span-6 sm:col-span-4">
-                <x-jet-label for="email_address" value="{{ __('Email Address (*)') }}" />
+                <x-jet-label for="email_address">Email Address  (<span class="text-danger">*</span>)</x-jet-label>
                 <x-jet-input id="email_address" type="text" class="block w-full mt-1" wire:model.defer="state.email_address" autocomplete="email_address" />
                 <x-jet-input-error for="email_address" class="mt-2" />
             </div>
     
             <!-- Phone Number -->
             <div class="col-span-6 sm:col-span-4">
-                <x-jet-label for="phone_number" value="{{ __('Phone Number (*)') }}" />
+                <x-jet-label for="phone_number">Phone Number  (<span class="text-danger">*</span>)</x-jet-label>
                 <x-jet-input id="phone_number" type="text" class="block w-full mt-1" wire:model.defer="state.phone_number" autocomplete="phone_number" />
                 <x-jet-input-error for="phone_number" class="mt-2" />
             </div>
     
             <!-- User Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-jet-label for="email" value="{{ __('User (*)') }}" />
+                <x-jet-label for="email">User  (<span class="text-danger">*</span>)</x-jet-label>
                 <x-jet-input id="email" type="text" class="block w-full mt-1" wire:model.defer="state.email" />
                 <x-jet-input-error for="email" class="mt-2" />
     

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\InsertBudget;
 use App\Models\OfficeItem;
 use Illuminate\Database\Seeder;
 
@@ -242,5 +243,64 @@ class User2Seed extends Seeder
         ];
         
         OfficeItem::insert($officeitem);
+        date_default_timezone_set('Etc/GMT-8');
+        $isert_budget = [
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '1',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 20370,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '2',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 33700,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '3',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 7500000,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '4',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 850000,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '5',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 0,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [ 
+            'user_id' => '10',
+            'item_category_id' => '6',
+            'first_quarter' => 0,
+            'second_quarter' => 0,
+            'third_quarter' => 53250,
+            'fourth_quarter' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            ],
+        ];
+
+        InsertBudget::insert($isert_budget);
     }
 }
