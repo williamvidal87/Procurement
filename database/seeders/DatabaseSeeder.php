@@ -30,7 +30,11 @@ class DatabaseSeeder extends Seeder
             IgpSeeder::class,
             SpmoSeeder::class,
             SaoSeeder::class,
-            RegistrarSeeder::class
+            RegistrarSeeder::class,
+            // User1Seed::class,
+            // User2Seed::class,
+            // User3Seed::class,
+            // User4Seed::class
         ]);
     }
 }

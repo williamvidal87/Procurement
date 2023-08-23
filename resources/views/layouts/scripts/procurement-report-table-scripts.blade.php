@@ -4,10 +4,10 @@
     document.addEventListener('DOMContentLoaded', function () {
         
         var ProcuredTotal=(<?php
-        echo $this->ProcuredTotal;
+        echo round($this->ProcuredTotal,2);
         ?>);
         var RemainingTotal=(<?php
-        echo $this->RemainingTotal;
+        echo round($this->RemainingTotal,2);
         ?>);
         
         $(function () {

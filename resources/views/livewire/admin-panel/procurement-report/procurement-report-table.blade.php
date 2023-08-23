@@ -413,7 +413,7 @@
                                         }
                                     ?>
                                     <h4 class="small font-weight-bold">{{ $data->getOffice->office }} <span
-                                            class="float-right">{{ $office_budget/$this->Guihulngan_Budget*100 }}%</span></h4>
+                                            class="float-right">{{ round($office_budget/$this->Guihulngan_Budget*100,2) }}%</span></h4>
                                     <div class="progress mb-4">
                                         <div class="progress-bar bg-info" role="progressbar" style="width: {{ $office_budget/$this->Guihulngan_Budget*100 }}%"
                                             aria-valuenow="{{ $office_budget/$this->Guihulngan_Budget*100 }}" aria-valuemin="0" aria-valuemax="100"></div>
