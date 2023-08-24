@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'checkRulepermissionadmin' => \App\Http\Middleware\CheckRulePermissionAdmin::class,
         'checkRulepermissionspmo' => \App\Http\Middleware\CheckRulePermissionSpmo::class,
         'checkRulepermissionuser' => \App\Http\Middleware\CheckRulePermissionUser::class,
+        'checkpassword' => \App\Http\Middleware\CheckPassword::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

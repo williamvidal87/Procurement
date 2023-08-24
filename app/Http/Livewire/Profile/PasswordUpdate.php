@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Profile;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 use Livewire\Component;
@@ -43,7 +44,12 @@ class PasswordUpdate extends Component
             'password_confirmation' => '',
         ];
 
+
+        $data = [
+            'status_id' => 32,
+        ];
         $this->emit('saved');
+        User::find(Auth::user()->id)->update($data);
         return redirect()->to('/dashboard');
     }
 
