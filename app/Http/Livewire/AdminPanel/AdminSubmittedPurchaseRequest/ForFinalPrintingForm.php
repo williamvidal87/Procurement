@@ -13,26 +13,26 @@ class ForFinalPrintingForm extends Component
             $purchase_request_date,
             $request_category_id;
     public  $PurchaseRequestId;
-    
+
     protected $listeners = [
         'PurchaseRequestId'
     ];
-    
+
     public function PurchaseRequestId($PurchaseRequestId)
     {
         $this->PurchaseRequestId=$PurchaseRequestId;
     }
-    
+
     public function render()
     {
         return view('livewire.admin-panel.admin-submitted-purchase-request.for-final-printing-form',[
             'RequestCategoryData' =>  RequestCategory::all()
         ]);
     }
-    
+
     public function store()
     {
-        
+
         $this->validate([
             'request_category_id'       => 'required'
         ]);
@@ -48,15 +48,15 @@ class ForFinalPrintingForm extends Component
         ]);
         // dd($data);
         try {
-            
+
             PurchaseRequest::find($this->PurchaseRequestId)->update($data);
             $this->emit('alert_update');
-            
+
         } catch (\Exception $e) {
 			dd($e);
 			return back();
         }
-        
+
         $this->emit('closeForFinalPrintingModal');
         $this->emit('closeAdminSubmmitedPurchaseRequestModal');
         $this->emit('refresh_adminsubmitttedpurchaserequest_table');
@@ -64,7 +64,7 @@ class ForFinalPrintingForm extends Component
         $this->resetErrorBag();
         $this->resetValidation();
     }
-    
+
     public function closeForFinalPrintingForm()
     {
         $this->emit('closeForFinalPrintingModal');
