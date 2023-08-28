@@ -57,32 +57,6 @@ class HomeTable extends Component
         // } else {
         //     dd( "The message failed with status: " . $message->getStatus() . "\n");
         // }
-        
-        
-        // Authorisation details.
-    	$username = "williamvidal652@gmail.com";
-    	$hash = "480a3b4b52e754a6a83b047ec8d5f3905f3f7876b390a374ed035106ffd913de";
-    
-    	// Config variables. Consult http://api.txtlocal.com/docs for more info.
-    	$test = "0";
-    
-    	// Data for text message. This is the text message data.
-    	$sender = "API Test"; // This is who the message appears to be from.
-    	$numbers = "09212969669"; // A single number or a comma-seperated list of numbers
-    	$message = "This is a test message from the PHP API script.";
-    	// 612 chars or less
-    	// A single number or a comma-seperated list of numbers
-    	$message = urlencode($message);
-    	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-    	$ch = curl_init('https://api.txtlocal.com/send/?');
-    	curl_setopt($ch, CURLOPT_POST, true);
-    	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    	$result = curl_exec($ch); // This is the result from the API
-    	curl_close($ch);
-        
-        
-        
     
         $this->emit('openPurchaseRequestModal');
         $this->emit('ItemCategoryId',$item_category_id,$quarter_id,$total_approve_budget);
