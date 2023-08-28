@@ -18,7 +18,7 @@
         "livewire/livewire": "^2.5",
         "nexmo/client": "^2.4",
         "tnkemdilim/money-to-words-converter": "^2.1",
-        "twilio/sdk": "*"
+		"infobip/infobip-api-php-client": "^5.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
