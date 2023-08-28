@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Joselito D. Pamor',
-            'email' => 'spmo',
+            'email' => '202335SPMO',
             'password' => bcrypt('spmo123'),
             'rule_id' => 2,
             'office_id' => 35,
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Dario B. Eneserio',
-            'email' => 'bgmo',
+            'email' => '202308BGMO',
             'password' => bcrypt('bgmo123'),
             'rule_id' => 3,
             'office_id' => 8,
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Cas',
-            'email' => 'cas',
+            'email' => '202311CAS',
             'password' => bcrypt('cas123'),
             'rule_id' => 3,
             'office_id' => 11,
@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Cashier',
-            'email' => 'casheir',
+            'email' => '202312CASHIER',
             'password' => bcrypt('casheir123'),
             'rule_id' => 3,
             'office_id' => 12,
@@ -63,7 +63,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Igp',
-            'email' => 'igp',
+            'email' => '202325IGP',
             'password' => bcrypt('igp123'),
             'rule_id' => 3,
             'office_id' => 25,
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Sao',
-            'email' => 'sao',
+            'email' => '202333SAO',
             'password' => bcrypt('sao123'),
             'rule_id' => 3,
             'office_id' => 33,
@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
             ],
             [ 
             'name' => 'Registrar',
-            'email' => 'registrar',
+            'email' => '202330REGISTRAR',
             'password' => bcrypt('registrar123'),
             'rule_id' => 3,
             'office_id' => 30,
