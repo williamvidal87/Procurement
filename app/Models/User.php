@@ -30,9 +30,10 @@ class User extends Authenticatable
         'rule_id',
         'office_id',
         'email_address',
-        'phone_number'
+        'phone_number',
+        'status_id'
     ];
-    
+
     public function getOffice()
     {
         return $this->belongsTo(Office::class,'office_id');
