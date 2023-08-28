@@ -23,7 +23,6 @@ class UserSeeder extends Seeder
             'office_id' => null,
             'email_address' => 'admin@gmail.com',
             'phone_number' => '9973613510',
-            
             ],
             [ 
             'name' => 'ENGR. JOSELITO D. PAMOR',
