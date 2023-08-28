@@ -53,7 +53,7 @@ class UserForm extends Component
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
                     'email_address' => 'required',
-                    'phone_number' => 'required','numeric','digits:10',
+                    'phone_number' => 'digits:10',
                     'office_id' => 'required',
                 ]);
             } else {
@@ -63,7 +63,7 @@ class UserForm extends Component
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
                     'email_address' => 'required',
-                    'phone_number' => 'required','numeric','digits:10',
+                    'phone_number' => 'digits:10',
                     'office_id' => 'required',
                 ]);
             }
@@ -75,7 +75,7 @@ class UserForm extends Component
                 'password' => 'required|same:confirmpassword',
                 'confirmpassword' => 'required',
                 'email_address' => 'required',
-                'phone_number' => 'required','numeric','digits:10',
+                'phone_number' => 'digits:10',
                 'office_id' => 'required',
             ]);
         }
