@@ -23,11 +23,11 @@ class HomeTable extends Component
             $saving_third_quarter_total,
             $saving_fourth_quarter_total;
     public  $ExistData=0;
-            
+
             protected $listeners = [
                 'refresh_home_table' => '$refresh'
             ];
-            
+
     public function render()
     {
         $this->emit('EmitTable');
@@ -39,25 +39,13 @@ class HomeTable extends Component
             'PurchaseRequestItemData' => PurchaseRequestItem::all()
         ])->with('getItemCategory');
     }
-    
-    
+
+
     public function createPurchaseRequest($item_category_id,$quarter_id,$total_approve_budget)
     {
-        // $basic  = new \Vonage\Client\Credentials\Basic("e84d79f8", "EmUbN8mSqDbjfiq4");
-        // $client = new \Vonage\Client($basic);
-        
-        // $response = $client->sms()->send(
-        //     new \Vonage\SMS\Message\SMS("639973613510", "Procurement", 'sample notify')
-        // );
-        
-        // $message = $response->current();
-        
-        // if ($message->getStatus() == 0) {
-        //     dd( "The message was sent successfully\n");
-        // } else {
-        //     dd( "The message failed with status: " . $message->getStatus() . "\n");
-        // }
-    
+
+
+
         $this->emit('openPurchaseRequestModal');
         $this->emit('ItemCategoryId',$item_category_id,$quarter_id,$total_approve_budget);
     }
