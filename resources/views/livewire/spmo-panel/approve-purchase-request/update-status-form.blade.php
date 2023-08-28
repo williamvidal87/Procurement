@@ -19,7 +19,7 @@
                 <button class="btn btn-warning" wire:click="ProjectImplementation">For Project Implementation</button>
             @endif
             @if($this->StatusId==15)
-                <button class="btn btn-warning" wire:click="ProjectCompleted">For Project Implementation</button>
+                <button class="btn btn-warning" wire:click="ProjectCompleted">Project Completed</button>
             @endif
         @endif
         

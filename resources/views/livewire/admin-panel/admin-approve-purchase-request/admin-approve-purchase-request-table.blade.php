@@ -25,7 +25,7 @@
                             @foreach($PurchaseRequestData as $data)
                             <tr>
                                 <td>{{ $data->id }}</td>
-                                <td>{{ $data->purchase_request_number ?? 'None' }}</td>
+                                <td>{{ $data->getPrNumber->pr_number ?? 'None' }}</td>
                                 <td>{{ $data->purchase_request_date ?? 'None' }}</td>
                                 <td>{{ $data->getUser->getOffice->office }}</td>
                                 <td>{{ $data->getInsertProcured->getItemCategory->item_category }}</td>

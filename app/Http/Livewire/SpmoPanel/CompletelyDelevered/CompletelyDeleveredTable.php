@@ -12,6 +12,6 @@ class CompletelyDeleveredTable extends Component
         $this->emit('EmitTable');
         return view('livewire.spmo-panel.completely-delevered.completely-delevered-table',[
             'PurchaseRequestData' =>  PurchaseRequest::whereIn('status_id',[16,25])->get()
-        ])->with('getStatus');
+        ])->with('getStatus','getPrNumber');
     }
 }
