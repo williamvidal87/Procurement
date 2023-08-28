@@ -47,8 +47,8 @@ class AdminForm extends Component
                     'email' => 'required',
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
-                    'email_address' => 'required',
-                    'phone_number' => 'required',
+                    'email_address' => 'required','email',
+                    'phone_number' => 'required','numeric','digits:10',
                 ]);
             } else {
                 $this->validate([
@@ -56,8 +56,8 @@ class AdminForm extends Component
                     'email' => 'required|unique:users',
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
-                    'email_address' => 'required',
-                    'phone_number' => 'required',
+                    'email_address' => 'required','email',
+                    'phone_number' => 'required','numeric','digits:10',
                 ]);
             }
         } else {
@@ -67,8 +67,8 @@ class AdminForm extends Component
                 'email' => 'required|unique:users',
                 'password' => 'required|same:confirmpassword',
                 'confirmpassword' => 'required',
-                'email_address' => 'required',
-                'phone_number' => 'required',
+                'email_address' => 'required','email',
+                'phone_number' => 'required','numeric','digits:10',
             ]);
         }
         

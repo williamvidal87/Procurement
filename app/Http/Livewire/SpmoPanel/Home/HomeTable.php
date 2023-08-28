@@ -7,6 +7,12 @@ use App\Models\InsertProcured;
 use App\Models\PurchaseRequestItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Infobip\Api\SmsApi;
+use Infobip\Configuration;
+use Infobip\Model\SmsAdvancedTextualRequest;
+use Infobip\Model\SmsDestination;
+use Infobip\Model\SmsTextualMessage;
+use Throwable;
 
 class HomeTable extends Component
 {
@@ -43,46 +49,40 @@ class HomeTable extends Component
     
     public function createPurchaseRequest($item_category_id,$quarter_id,$total_approve_budget)
     {
-        // $basic  = new \Vonage\Client\Credentials\Basic("e84d79f8", "EmUbN8mSqDbjfiq4");
-        // $client = new \Vonage\Client($basic);
-        
-        // $response = $client->sms()->send(
-        //     new \Vonage\SMS\Message\SMS("639973613510", "Procurement", 'sample notify')
-        // );
-        
-        // $message = $response->current();
-        
-        // if ($message->getStatus() == 0) {
-        //     dd( "The message was sent successfully\n");
-        // } else {
-        //     dd( "The message failed with status: " . $message->getStatus() . "\n");
-        // }
-        
-        
-        // Authorisation details.
-    	$username = "williamvidal652@gmail.com";
-    	$hash = "480a3b4b52e754a6a83b047ec8d5f3905f3f7876b390a374ed035106ffd913de";
     
-    	// Config variables. Consult http://api.txtlocal.com/docs for more info.
-    	$test = "0";
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".Auth::user()->phone_number;
+        $MESSAGE_TEXT = "Sample Procurment";
+        
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        
+        $sendSmsApi = new SmsApi(config: $configuration);
+        
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+        
+            echo $smsResponse->getBulkId() . PHP_EOL;
+        
+            foreach ($smsResponse->getMessages() ?? [] as $message) {
+                echo sprintf('Message ID: %s, status: %s', $message->getMessageId(), $message->getStatus()?->getName()) . PHP_EOL;
+            }
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
     
-    	// Data for text message. This is the text message data.
-    	$sender = "API Test"; // This is who the message appears to be from.
-    	$numbers = "09212969669"; // A single number or a comma-seperated list of numbers
-    	$message = "This is a test message from the PHP API script.";
-    	// 612 chars or less
-    	// A single number or a comma-seperated list of numbers
-    	$message = urlencode($message);
-    	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-    	$ch = curl_init('https://api.txtlocal.com/send/?');
-    	curl_setopt($ch, CURLOPT_POST, true);
-    	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    	$result = curl_exec($ch); // This is the result from the API
-    	curl_close($ch);
-        
-        
-        
+    
+    
     
         $this->emit('openPurchaseRequestModal');
         $this->emit('ItemCategoryId',$item_category_id,$quarter_id,$total_approve_budget);
