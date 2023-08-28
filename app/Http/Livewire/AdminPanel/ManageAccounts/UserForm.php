@@ -52,8 +52,8 @@ class UserForm extends Component
                     'email' => 'required',
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
-                    'email_address' => 'required','email',
-                    'phone_number' => 'required','numeric','digits:10',
+                    'email_address' => 'required',
+                    'phone_number' => 'digits:10',
                     'office_id' => 'required',
                 ]);
             } else {
@@ -62,8 +62,8 @@ class UserForm extends Component
                     'email' => 'required|unique:users',
                     'newpassword' => 'same:confirmpassword',
                     'confirmpassword' => '',
-                    'email_address' => 'required','email',
-                    'phone_number' => 'required','numeric','digits:10',
+                    'email_address' => 'required',
+                    'phone_number' => 'digits:10',
                     'office_id' => 'required',
                 ]);
             }
@@ -74,8 +74,8 @@ class UserForm extends Component
                 'email' => 'required|unique:users',
                 'password' => 'required|same:confirmpassword',
                 'confirmpassword' => 'required',
-                'email_address' => 'required','email',
-                'phone_number' => 'required','numeric','digits:10',
+                'email_address' => 'required',
+                'phone_number' => 'digits:10',
                 'office_id' => 'required',
             ]);
         }

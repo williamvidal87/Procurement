@@ -25,7 +25,11 @@
                             @foreach($PurchaseRequestData as $data)
                             <tr>
                                 <td>{{ $data->id }}</td>
-                                <td>{{ $data->purchase_request_number ?? 'None' }}</td>
+                                    <td>
+                                        @if($data->purchase_request_date!=null)
+                                        {{ $date = date_create_from_format("Y-m-d", $data->purchase_request_date ?? '2023-08-01')->format("Y-m-").$data->getPrNumber->pr_number ?? 'None' }}
+                                        @endif
+                                    </td>
                                 <td>{{ $data->purchase_request_date ?? 'None' }}</td>
                                 <td>{{ $data->getUser->getOffice->office }}</td>
                                 <td>{{ $data->getInsertProcured->getItemCategory->item_category }}</td>

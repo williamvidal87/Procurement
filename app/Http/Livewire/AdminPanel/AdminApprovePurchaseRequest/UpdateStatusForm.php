@@ -3,7 +3,14 @@
 namespace App\Http\Livewire\AdminPanel\AdminApprovePurchaseRequest;
 
 use App\Models\PurchaseRequest;
+use App\Models\Status;
 use Livewire\Component;
+use Infobip\Api\SmsApi;
+use Infobip\Configuration;
+use Infobip\Model\SmsAdvancedTextualRequest;
+use Infobip\Model\SmsDestination;
+use Infobip\Model\SmsTextualMessage;
+use Throwable;
 
 class UpdateStatusForm extends Component
 {
@@ -21,9 +28,9 @@ class UpdateStatusForm extends Component
         $this->PurchaseRequestId=$PurchaseRequestId;
         $this->RequestCategoryId=$RequestCategoryId;
         $this->StatusId=$StatusId;
-        $DATA=PurchaseRequest::find($this->PurchaseRequestId);
-        $this->pr_no = $DATA['purchase_request_number'];
-        $this->pr_date = $DATA['purchase_request_date'];
+        $DATA=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $this->pr_no = date_create_from_format("Y-m-d",$DATA->purchase_request_date)->format("Y-m-").$DATA->getPrNumber->pr_number;
+        $this->pr_date = $DATA->purchase_request_date;
     }
     
     public function render()
@@ -40,6 +47,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Approve Budget of the Contract to For Pre-Procurement. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -54,6 +83,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Pre-Procurement to For Posting of Invitation to Bid & Bidding Documents. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -68,6 +119,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Posting of Invitation to Bid & Bidding Documents to For Pre-Bid Conference. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -83,6 +156,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Pre-Bid Conference to For Bid Opening & Evaluation. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -104,6 +199,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Bid Opening & Evaluation to For Abstract of Bids. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -119,6 +236,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Abstract of Bids to For Post-Qualification. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -134,6 +273,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Post-Qualification to For Notice of Award. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -149,6 +310,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Notice of Award to For Contract Signing. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -164,6 +347,28 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from For Contract Signing to For Notice to Proceed. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();
@@ -182,6 +387,29 @@ class UpdateStatusForm extends Component
         PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeStatusModal');
+
+        $show_PurchaseRequest=PurchaseRequest::where('id',$this->PurchaseRequestId)->get()->first();
+        $show_PrNumber=$show_PurchaseRequest->getPrNumber->pr_number;
+        $show_status=Status::where('id',$this->StatusId)->get()->first();
+        $BASE_URL = env('BASE_URL');
+        $API_KEY = env('API_KEY');
+        $SENDER = "InfoSMS";
+        $RECIPIENT = "63".$show_PurchaseRequest->getUser->phone_number;
+        $MESSAGE_TEXT = "Request with PR Number: ".date('Y-m-').$show_PrNumber.", has been updated from ".$show_status->status_name." to For Abstract of Quotation. Please check your dashboard for other details.";
+        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+        $sendSmsApi = new SmsApi(config: $configuration);
+        $destination = new SmsDestination(
+            to: $RECIPIENT
+        );
+        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+        $request = new SmsAdvancedTextualRequest(messages: [$message]);
+        try {
+            $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        } catch (Throwable $apiException) {
+            echo("HTTP Code: " . $apiException->getCode() . "\n");
+        }
+        
         $this->emit('refresh_adminapprovepurchaserequest_table');
         $this->reset();
         $this->resetErrorBag();

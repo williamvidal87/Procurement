@@ -29,11 +29,11 @@ class HomeTable extends Component
             $saving_third_quarter_total,
             $saving_fourth_quarter_total;
     public  $ExistData=0;
-            
+
             protected $listeners = [
                 'refresh_home_table' => '$refresh'
             ];
-            
+
     public function render()
     {
         $this->emit('EmitTable');
@@ -45,45 +45,45 @@ class HomeTable extends Component
             'PurchaseRequestItemData' => PurchaseRequestItem::all()
         ])->with('getItemCategory');
     }
-    
-    
+
+
     public function createPurchaseRequest($item_category_id,$quarter_id,$total_approve_budget)
     {
-    
-        $BASE_URL = env('BASE_URL');
-        $API_KEY = env('API_KEY');
-        
-        $SENDER = "InfoSMS";
-        $RECIPIENT = "63".Auth::user()->phone_number;
-        $MESSAGE_TEXT = "Sample Procurment";
-        
-        $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
-        
-        $sendSmsApi = new SmsApi(config: $configuration);
-        
-        $destination = new SmsDestination(
-            to: $RECIPIENT
-        );
-        
-        $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
-        
-        $request = new SmsAdvancedTextualRequest(messages: [$message]);
-        
-        try {
-            $smsResponse = $sendSmsApi->sendSmsMessage($request);
-        
-            echo $smsResponse->getBulkId() . PHP_EOL;
-        
-            foreach ($smsResponse->getMessages() ?? [] as $message) {
-                echo sprintf('Message ID: %s, status: %s', $message->getMessageId(), $message->getStatus()?->getName()) . PHP_EOL;
-            }
-        } catch (Throwable $apiException) {
-            echo("HTTP Code: " . $apiException->getCode() . "\n");
-        }
-    
-    
-    
-    
+
+        // $BASE_URL = env('BASE_URL');
+        // $API_KEY = env('API_KEY');
+
+        // $SENDER = "InfoSMS";
+        // $RECIPIENT = "63"."9973613510";
+        // $MESSAGE_TEXT = "Request with PR Number: (PR Number), has been updated from (Status) Request for Quotation to (Status) For PhilGeps Posting. Please check your dashboard for other details.";
+
+        // $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
+
+        // $sendSmsApi = new SmsApi(config: $configuration);
+
+        // $destination = new SmsDestination(
+        //     to: $RECIPIENT
+        // );
+
+        // $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+
+        // $request = new SmsAdvancedTextualRequest(messages: [$message]);
+
+        // try {
+        //     $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+        //     echo $smsResponse->getBulkId() . PHP_EOL;
+
+        //     foreach ($smsResponse->getMessages() ?? [] as $message) {
+        //         echo sprintf('Message ID: %s, status: %s', $message->getMessageId(), $message->getStatus()?->getName()) . PHP_EOL;
+        //     }
+        // } catch (Throwable $apiException) {
+        //     echo("HTTP Code: " . $apiException->getCode() . "\n");
+        // }
+
+
+
+
         $this->emit('openPurchaseRequestModal');
         $this->emit('ItemCategoryId',$item_category_id,$quarter_id,$total_approve_budget);
     }

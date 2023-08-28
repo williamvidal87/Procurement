@@ -38,7 +38,7 @@ class SubmmitedPurchaseRequestTable extends Component
     {
         $UserData=PurchaseRequest::where('id',$PurchaseRequestId)->first();
         $office=$UserData->getUser->getOffice->office;
-        $pr_no=$UserData->purchase_request_number;
+        $pr_no=date_create_from_format("Y-m-d",$UserData->purchase_request_date)->format("Y-m-").$UserData->getPrNumber->pr_number;
         $pr_date=$UserData->purchase_request_date;
         $this->emit('EmitTable');
         $this->emit('refresh_submmitedpurchaserequest_table');
@@ -61,7 +61,7 @@ class SubmmitedPurchaseRequestTable extends Component
             'UserName' => $UserData->getUser->name,
             'Office' => $UserData->getUser->getOffice->office
             ])->setPaper('Legal', 'Portrait')->output();
-        return response()->streamDownload(fn () => print($pdfContent),$pr_date.".pdf");
+        return response()->streamDownload(fn () => print($pdfContent),$pr_no.".pdf");
         
     }
 }

@@ -12,6 +12,6 @@ class UserCompletelyDeliveredTable extends Component
     {
         return view('livewire.user-panel.user-completely-delivered.user-completely-delivered-table',[
             'PurchaseRequestData' =>  PurchaseRequest::where('user_id',Auth::user()->id)->whereIn('status_id',[16,25])->get()
-        ])->with('getStatus');
+        ])->with('getStatus','getPrNumber');
     }
 }
