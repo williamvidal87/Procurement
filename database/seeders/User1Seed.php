@@ -191,7 +191,7 @@ class User1Seed extends Seeder
             'category_id' => 3,
             'item_no' => 1,
             'unit_measure' => 'lot',
-            'item_description' => "Repair / Rehabilitaiton / Improvement of Existing Supply Property Management Office (SPMO)				
+            'item_description' => "Repair / Rehabilitaiton / Improvement of Existing Supply Property Management Office (CareCenter)				
             ",
             'qty' => 1,
             'estimated_cost' =>   3500000.00 

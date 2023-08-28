@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>{{ $data->id }}</td>
                                     <td>
-                                        @if($data->purchase_request_date!=null)
+                                        @if($data->purchase_request_date!=null&&$data->pr_id!=null)
                                         {{ $date = date_create_from_format("Y-m-d", $data->purchase_request_date ?? '2023-08-01')->format("Y-m-").$data->getPrNumber->pr_number ?? 'None' }}
                                         @endif
                                     </td>
