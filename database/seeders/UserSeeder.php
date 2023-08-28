@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             
             ],
             [ 
-            'name' => 'Joselito D. Pamor',
+            'name' => 'ENGR. JOSELITO D. PAMOR',
             'email' => '202335SPMO',
             'password' => bcrypt('spmo123'),
             'rule_id' => 2,
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Dario B. Eneserio',
+            'name' => 'DARIO B. ENESERIO',
             'email' => '202308BGMO',
             'password' => bcrypt('bgmo123'),
             'rule_id' => 3,
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Cas',
+            'name' => 'DR. ROGER M. MALAHAY',
             'email' => '202311CAS',
             'password' => bcrypt('cas123'),
             'rule_id' => 3,
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Cashier',
+            'name' => 'DR. DOMINIC M. LARIOSA',
             'email' => '202312CASHIER',
             'password' => bcrypt('casheir123'),
             'rule_id' => 3,
@@ -62,7 +62,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Igp',
+            'name' => 'DR. EDEN GRACE VILLAFUERTE',
             'email' => '202325IGP',
             'password' => bcrypt('igp123'),
             'rule_id' => 3,
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Sao',
+            'name' => 'DR. JOEL T. UBAT',
             'email' => '202333SAO',
             'password' => bcrypt('sao123'),
             'rule_id' => 3,
@@ -80,7 +80,7 @@ class UserSeeder extends Seeder
             'phone_number' => '9973613510',
             ],
             [ 
-            'name' => 'Registrar',
+            'name' => 'PETMAR M. SAING',
             'email' => '202330REGISTRAR',
             'password' => bcrypt('registrar123'),
             'rule_id' => 3,
