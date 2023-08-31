@@ -69,6 +69,17 @@
               yPadding: 15,
               displayColors: false,
               caretPadding: 10,
+              
+              callbacks: {
+              label: function(tooltipItem, data) {
+                //get the concerned dataset
+                var dataset = data.datasets[tooltipItem.datasetIndex];
+                //get the current items value
+                var currentValue = dataset.data[tooltipItem.index];
+          
+                return currentValue + "%";
+              }
+            }
             },
             legend: {
               display: false
