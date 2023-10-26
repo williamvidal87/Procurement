@@ -146,9 +146,27 @@ class PurchaseRequestForm extends Component
                     PurchaseRequestItem::create($data);
                 }
             }
-            $data2 = ([
-                'third_quarter'         =>  $this->total_all,
-            ]);
+            $this->QuarterId;
+            if ($this->QuarterId==1) {
+                $data2 = ([
+                    'first_quarter'         =>  $this->total_all,
+                ]);
+            }
+            if ($this->QuarterId==2) {
+                $data2 = ([
+                    'second_quarter'         =>  $this->total_all,
+                ]);
+            }
+            if ($this->QuarterId==3) {
+                $data2 = ([
+                    'third_quarter'         =>  $this->total_all,
+                ]);
+            }
+            if ($this->QuarterId==4) {
+                $data2 = ([
+                    'fourth_quarter'         =>  $this->total_all,
+                ]);
+            }
             InsertProcured::find($this->InsertProcuredId)->update($data2);
             $data3 = ([
                 'user_id'               =>  Auth::user()->id,
