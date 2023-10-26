@@ -17,7 +17,7 @@ class CasSeeder extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -27,7 +27,7 @@ class CasSeeder extends Seeder
             'estimated_cost' =>   24.00,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -37,7 +37,7 @@ class CasSeeder extends Seeder
             'estimated_cost' =>  24,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -50,7 +50,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -63,7 +63,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -76,7 +76,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -89,7 +89,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -102,7 +102,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -115,7 +115,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -128,7 +128,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -141,7 +141,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -154,7 +154,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -167,7 +167,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 1,
             'item_no' => 1,
@@ -190,7 +190,7 @@ class CasSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 2,
             'item_no' => 1,
@@ -201,7 +201,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 2,
             'item_no' => 1,
@@ -223,7 +223,7 @@ class CasSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 3,
             'item_no' => 1,
@@ -242,7 +242,7 @@ class CasSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 4,
             'item_no' => 1,
@@ -263,7 +263,7 @@ class CasSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 5,
             'item_no' => 1,
@@ -280,7 +280,7 @@ class CasSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 4,
             'category_id' => 5,
             'item_no' => 1,
