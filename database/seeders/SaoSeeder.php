@@ -17,7 +17,7 @@ class SaoSeeder extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -30,7 +30,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -42,7 +42,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -54,7 +54,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -67,7 +67,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -80,7 +80,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 1,
             'item_no' => 1,
@@ -98,7 +98,7 @@ class SaoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 2,
             'item_no' => 1,
@@ -120,7 +120,7 @@ class SaoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 4,
             'item_no' => 1,
@@ -137,7 +137,7 @@ class SaoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 5,
             'item_no' => 1,
@@ -154,7 +154,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 5,
             'item_no' => 1,
@@ -171,7 +171,7 @@ class SaoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 6,
             'item_no' => 1,
@@ -183,7 +183,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 6,
             'item_no' => 1,
@@ -195,7 +195,7 @@ class SaoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 7,
             'category_id' => 6,
             'item_no' => 1,

@@ -17,7 +17,7 @@ class RegistrarSeeder extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 8,
             'category_id' => 1,
             'item_no' => 1,
@@ -30,7 +30,7 @@ class RegistrarSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 1,
             'item_no' => 1,
@@ -43,7 +43,7 @@ class RegistrarSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 1,
             'item_no' => 1,
@@ -57,7 +57,7 @@ class RegistrarSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 1,
             'item_no' => 1,
@@ -76,7 +76,7 @@ class RegistrarSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 2,
             'item_no' => 1,
@@ -98,7 +98,7 @@ class RegistrarSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 4,
             'item_no' => 1,
@@ -117,7 +117,7 @@ class RegistrarSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 5,
             'item_no' => 1,
@@ -134,7 +134,7 @@ class RegistrarSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4,  
             'user_id' => 8,
             'category_id' => 5,
             'item_no' => 1,

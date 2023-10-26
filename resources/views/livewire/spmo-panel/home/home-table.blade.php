@@ -96,8 +96,21 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                @if((date_format($data->created_at,"m")=='10'||date_format($data->created_at,"m")=='11'||date_format($data->created_at,"m")=='12')&&$data->fourth_quarter!=0)
-                                                <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},4,{{ $data->fourth_quarter }})">Request</a></u></code>
+                                                <?php
+                                                    
+                                                    $ExistData=0;
+                                                    foreach ($InsertProcuredData as $insertProcuredData) {
+                                                        if ($insertProcuredData->item_category_id==$data->item_category_id) {
+                                                            foreach ($PurchaseRequestItemData as $purchaseRequestItemData) {
+                                                                if ($insertProcuredData->id==$purchaseRequestItemData->insert_procured_id) {
+                                                                    $ExistData=1;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
+                                                @if((date_format($data->created_at,"m")=='10'||date_format($data->created_at,"m")=='11'||date_format($data->created_at,"m")=='12')&&$data->fourth_quarter!=0&&$ExistData!=1)
+                                                    <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->getItemCategory->id}},4,{{ $data->fourth_quarter }})">Request</a></u></code>
                                                 @endif
                                             </td>
                                         </tr>

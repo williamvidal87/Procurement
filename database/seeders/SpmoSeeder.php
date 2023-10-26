@@ -17,7 +17,7 @@ class SpmoSeeder extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -30,7 +30,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -43,7 +43,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -56,7 +56,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -68,7 +68,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -80,7 +80,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -93,7 +93,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -105,7 +105,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -118,7 +118,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -131,7 +131,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -144,7 +144,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
@@ -163,7 +163,7 @@ class SpmoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
@@ -185,7 +185,7 @@ class SpmoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 3,
             'item_no' => 1,
@@ -202,7 +202,7 @@ class SpmoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 4,
             'item_no' => 1,
@@ -221,7 +221,7 @@ class SpmoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 5,
             'item_no' => 1,
@@ -250,7 +250,7 @@ class SpmoSeeder extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
@@ -267,7 +267,7 @@ class SpmoSeeder extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,

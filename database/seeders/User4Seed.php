@@ -18,7 +18,7 @@ class User4Seed extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 3,
+            'quarter_id' => 4,
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -31,7 +31,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -44,7 +44,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -57,7 +57,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -69,7 +69,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -81,7 +81,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -93,7 +93,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -105,7 +105,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -118,7 +118,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 1,
             'item_no' => 1,
@@ -138,7 +138,7 @@ class User4Seed extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 2,
             'item_no' => 1,
@@ -154,7 +154,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 2,
             'item_no' => 1,
@@ -174,7 +174,7 @@ class User4Seed extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 4,
             'item_no' => 1,
@@ -195,7 +195,7 @@ class User4Seed extends Seeder
             
             
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 5,
             'item_no' => 1,
@@ -212,7 +212,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 5,
             'item_no' => 1,
@@ -228,7 +228,7 @@ class User4Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 3, 
+            'quarter_id' => 4, 
             'user_id' => 12,
             'category_id' => 5,
             'item_no' => 1,
