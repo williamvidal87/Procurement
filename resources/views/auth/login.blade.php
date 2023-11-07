@@ -42,7 +42,7 @@
                     <div class="text-center" style="font-family: Arial, Helvetica, sans-serif;">
                         <br>
                         <h1 class="h4 text-gray-900 mb-4" style="font-size: 20pt"><strong>NORSU GUIHULNGAN</strong></h1>
-                        <h1 class="h4 text-gray-900 mb-4" style="font-size: 20pt"><strong>Procurement Management System</strong></h1>
+                        <h1 class="h4 text-gray-900 mb-4" style="font-size: 20pt"><strong>PROCUREMENT MANAGEMENT SYSTEM</strong></h1>
                 
                 </div>
                 <div class="card o-hidden border-0 shadow-lg my-5">
