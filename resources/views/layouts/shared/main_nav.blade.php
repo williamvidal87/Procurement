@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon">
             <img src="image/logo/norsulogo.png" alt="Norsu" class="brand-image img-circle elevation-3" style="opacity: .8;max-height: 55px;margin-left: auto" >
         </div>
-        <div class="sidebar-brand-text mx-3"><span style="font-size: 8.10pt;">NORSU-G DBPMS</span></div>
+        <div class="sidebar-brand-text mx-3"><span style="font-size: 8.10pt;">NORSU-G PMS</span></div>
     </a>
 
     <!-- Divider -->
