@@ -408,7 +408,7 @@
                                         $office_budget=0;
                                         foreach ($InsertBudgetData as $insertBudgetData) {
                                             if ($data->id==$insertBudgetData->user_id) {
-                                                $office_budget+=$insertBudgetData->first_quarter+$insertBudgetData->second_quarter+$insertBudgetData->third_quarter+$insertBudgetData->third_quarterfourth_quarter;
+                                                $office_budget+=$insertBudgetData->first_quarter+$insertBudgetData->second_quarter+$insertBudgetData->third_quarter+$insertBudgetData->third_quarter+$insertBudgetData->fourth_quarter;
                                             }
                                         }
                                     ?>
