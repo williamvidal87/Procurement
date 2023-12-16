@@ -60,7 +60,7 @@ class UpdateSvpStatusForm extends Component
             $smsResponse = $sendSmsApi->sendSmsMessage($request);
 
         } catch (Throwable $apiException) {
-            echo("HTTP Code: " . $apiException->getCode() . "\n");
+            // echo("HTTP Code: " . $apiException->getCode() . "\n");
         }
 
         $this->emit('refresh_adminsubmitttedpurchaserequest_table');
@@ -96,7 +96,7 @@ class UpdateSvpStatusForm extends Component
             $smsResponse = $sendSmsApi->sendSmsMessage($request);
 
         } catch (Throwable $apiException) {
-            echo("HTTP Code: " . $apiException->getCode() . "\n");
+            // echo("HTTP Code: " . $apiException->getCode() . "\n");
         }
 
         $this->emit('refresh_adminsubmitttedpurchaserequest_table');
