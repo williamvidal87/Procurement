@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'rule_id' => 1,
             'office_id' => null,
             'email_address' => 'admin@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'ENGR. JOSELITO D. PAMOR',
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'rule_id' => 2,
             'office_id' => 35,
             'email_address' => 'spmo@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'DARIO B. ENESERIO',
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 8,
             'email_address' => 'bgmo@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'DR. ROGER M. MALAHAY',
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 11,
             'email_address' => 'cas@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'DR. DOMINIC M. LARIOSA',
@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 12,
             'email_address' => 'casheir@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'DR. EDEN GRACE VILLAFUERTE',
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 25,
             'email_address' => 'igp@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'DR. JOEL T. UBAT',
@@ -76,7 +76,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 33,
             'email_address' => 'sao@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
             [ 
             'name' => 'PETMAR M. SAING',
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
             'rule_id' => 3,
             'office_id' => 30,
             'email_address' => 'registrar@gmail.com',
-            'phone_number' => '9973613510',
+            'phone_number' => '9533491159',
             ],
         ];
 
