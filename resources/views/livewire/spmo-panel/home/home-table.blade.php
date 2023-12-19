@@ -44,9 +44,9 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                @if((date_format($data->created_at,"m")=='01'||date_format($data->created_at,"m")=='02'||date_format($data->created_at,"m")=='03')&&$data->first_quarter!=0)
+                                                {{-- @if((date_format($data->created_at,"m")=='01'||date_format($data->created_at,"m")=='02'||date_format($data->created_at,"m")=='03')&&$data->first_quarter!=0) --}}
                                                 <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},1,{{ $data->first_quarter }})">Request</a></u></code>
-                                                @endif
+                                                {{-- @endif --}}
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->second_quarter, 2, '.', ',') ?? '0' }}
@@ -57,9 +57,9 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                @if((date_format($data->created_at,"m")=='04'||date_format($data->created_at,"m")=='05'||date_format($data->created_at,"m")=='06')&&$data->second_quarter!=0)
+                                                {{-- @if((date_format($data->created_at,"m")=='04'||date_format($data->created_at,"m")=='05'||date_format($data->created_at,"m")=='06')&&$data->second_quarter!=0) --}}
                                                 <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},2,{{ $data->second_quarter }})">Request</a></u></code>
-                                                @endif
+                                                {{-- @endif --}}
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->third_quarter, 2, '.', ',') ?? '0' }}
@@ -83,9 +83,9 @@
                                                         }
                                                     }
                                                 ?>
-                                                @if((date_format($data->created_at,"m")=='07'||date_format($data->created_at,"m")=='08'||date_format($data->created_at,"m")=='09')&&$data->third_quarter!=0&&$ExistData!=1)
+                                                {{-- @if((date_format($data->created_at,"m")=='07'||date_format($data->created_at,"m")=='08'||date_format($data->created_at,"m")=='09')&&$data->third_quarter!=0&&$ExistData!=1) --}}
                                                     <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->getItemCategory->id}},3,{{ $data->third_quarter }})">Request</a></u></code>
-                                                @endif
+                                                {{-- @endif --}}
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->fourth_quarter, 2, '.', ',') ?? '0'  }}
@@ -109,9 +109,9 @@
                                                         }
                                                     }
                                                 ?>
-                                                @if((date_format($data->created_at,"m")=='10'||date_format($data->created_at,"m")=='11'||date_format($data->created_at,"m")=='12')&&$data->fourth_quarter!=0&&$ExistData!=1)
+                                                {{-- @if((date_format($data->created_at,"m")=='10'||date_format($data->created_at,"m")=='11'||date_format($data->created_at,"m")=='12')&&$data->fourth_quarter!=0&&$ExistData!=1) --}}
                                                     <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->getItemCategory->id}},4,{{ $data->fourth_quarter }})">Request</a></u></code>
-                                                @endif
+                                                {{-- @endif --}}
                                             </td>
                                         </tr>
                                     @endforeach
