@@ -253,6 +253,7 @@ class User2Seed extends Seeder
             'third_quarter' => 20370,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
             [ 
             'user_id' => '10',
@@ -262,6 +263,7 @@ class User2Seed extends Seeder
             'third_quarter' => 33700,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
             [ 
             'user_id' => '10',
@@ -271,6 +273,7 @@ class User2Seed extends Seeder
             'third_quarter' => 7500000,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
             [ 
             'user_id' => '10',
@@ -280,6 +283,7 @@ class User2Seed extends Seeder
             'third_quarter' => 850000,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
             [ 
             'user_id' => '10',
@@ -289,6 +293,7 @@ class User2Seed extends Seeder
             'third_quarter' => 0,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
             [ 
             'user_id' => '10',
@@ -298,6 +303,7 @@ class User2Seed extends Seeder
             'third_quarter' => 53250,
             'fourth_quarter' => 0,
             'created_at' => date('Y-m-d H:i:s'),
+            'year_budget' => '2023',
             ],
         ];
 

@@ -14,7 +14,15 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Approved Budget</h6>
+                        <div class="form-group">
+                            <select wire:model="changeYear" wire:change="doSomething" style="max-width: 10rem" class="form-control form-control-sm" id="changeYear">
+                                <option>Select Year</option>
+                                @foreach ($years as $year)
+                                    <option value="{{$year}}">{{$year}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Approved Budget({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -38,10 +46,12 @@
                                                         {{ $data->item_category }}
                                                     @endif
                                                 @endforeach
+                                                <?php
+                                                    $purchaseRequestId=$this->insertBudgets[$index]['id'];
+                                                ?>
                                             </td>
                                             <td>
-                                                <input class="form-control form-control-sm" type="text"  wire:model="insertBudgets.{{$index}}.first_quarter" size="10" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>
-                                                @error('insertBudgets'.'.'.$index.'.'.'first_quarter') <span style="color: red">Required</span> @enderror
+                                                <a style="color: red;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},1)">₱{{ number_format($insertBudgets[$index]['first_quarter'], 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($this->insertBudgets[$index]['first_quarter']!=null) {
                                                         $first_quarter_total+=$this->insertBudgets[$index]['first_quarter'];
@@ -49,8 +59,7 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <input class="form-control form-control-sm" type="text" wire:model="insertBudgets.{{$index}}.second_quarter" size="10" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>
-                                                @error('insertBudgets'.'.'.$index.'.'.'second_quarter') <span style="color: red">Required</span> @enderror
+                                                <a style="color: red;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},2)">₱{{ number_format($insertBudgets[$index]['second_quarter'], 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($this->insertBudgets[$index]['second_quarter']!=null) {
                                                         $second_quarter_total+=$this->insertBudgets[$index]['second_quarter'];
@@ -58,8 +67,7 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <input class="form-control form-control-sm" type="text" wire:model="insertBudgets.{{$index}}.third_quarter" size="10" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>
-                                                @error('insertBudgets'.'.'.$index.'.'.'third_quarter') <span style="color: red">Required</span> @enderror
+                                                <a style="color: red;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},3)">₱{{ number_format($insertBudgets[$index]['third_quarter'], 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($this->insertBudgets[$index]['third_quarter']!=null) {
                                                         $third_quarter_total+=$this->insertBudgets[$index]['third_quarter'];
@@ -67,8 +75,7 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <input class="form-control form-control-sm" type="text" wire:model="insertBudgets.{{$index}}.fourth_quarter" size="10" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>
-                                                @error('insertBudgets'.'.'.$index.'.'.'fourth_quarter') <span style="color: red">Required</span> @enderror
+                                                <a style="color: red;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},4)">₱{{ number_format($insertBudgets[$index]['fourth_quarter'], 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($this->insertBudgets[$index]['fourth_quarter']!=null) {
                                                         $fourth_quarter_total+=$this->insertBudgets[$index]['fourth_quarter'];
@@ -102,10 +109,6 @@
     </div>
     <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" wire:click="closeBudgetUtilizationForm">Close</button>
-        @if(!empty($this->UserID))
-            <button class="btn btn-primary" wire:click="store">Save changes</button>
-        @else
-            <button class="btn btn-primary" wire:click="store">Submit</button>
-        @endif
+        
     </div>
 </div>

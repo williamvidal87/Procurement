@@ -43,6 +43,14 @@
             $('#budgetutilizationModal').modal('hide')
         });
         
+        window.livewire.on('openPurchaseRequestItemModal', () => {
+            $('#purchaserequestitemModal').modal('show')
+        });
+        
+        window.livewire.on('closePurchaseRequestItemModal', () => {
+            $('#purchaserequestitemModal').modal('hide')
+        });
+        
         
         
         window.livewire.on('openSwalDelete', (UserID) => {

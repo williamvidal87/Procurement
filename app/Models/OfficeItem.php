@@ -10,6 +10,7 @@ class OfficeItem extends Model
     use HasFactory;
     
     protected $fillable = [
+        'insert_budget_id',
         'quarter_id',
         'user_id',
         'category_id',

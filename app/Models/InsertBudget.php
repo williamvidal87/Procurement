@@ -16,6 +16,8 @@ class InsertBudget extends Model
         'second_quarter',
         'third_quarter',
         'fourth_quarter',
+        'year_budget',
+        'status_id'
     ];
     
     public function getItemCategory()

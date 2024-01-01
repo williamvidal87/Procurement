@@ -161,7 +161,7 @@ class CashierSeeder extends Seeder
             'item_description' => "Paper Shredder Machine, Automatic, Heavy Duty				
             Specs:				
             Color: Black				
-             Shred Capacity: 16 sheets; Shred size: 4x40mm; Security level:4				
+            Shred Capacity: 16 sheets; Shred size: 4x40mm; Security level:4				
             Bin Capacity: 31 Liters				
             ",
             'qty' => 1,

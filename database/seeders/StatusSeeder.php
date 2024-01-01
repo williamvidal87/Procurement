@@ -130,6 +130,16 @@ class StatusSeeder extends Seeder
             [
             'status_name' => 'Password is Updated'
             ],
+
+
+
+            //Insert Budget Status
+            [
+            'status_name' => 'Activate'
+            ],
+            [
+            'status_name' => 'Deactivate'
+            ],
         ];
 
         Status::insert($status);
