@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NORSU_G_DBPMS - Log In</title>
+    <title>NORSU_G_PMS - Log In</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('image/logo/norsu.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('image/logo/norsulogo.png') }}">
