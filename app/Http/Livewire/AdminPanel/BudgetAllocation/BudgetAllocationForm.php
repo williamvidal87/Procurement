@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\AdminPanel\BudgetAllocation;
 
 use App\Models\InsertBudget;
+use App\Models\InsertProcured;
 use App\Models\ItemCategory;
+use App\Models\OfficeItem;
 use Livewire\Component;
 
 class BudgetAllocationForm extends Component
@@ -30,9 +32,13 @@ class BudgetAllocationForm extends Component
     
     public function render()
     {
+        $YearNow=$this->changeYear;
         return view('livewire.admin-panel.budget-allocation.budget-allocation-form',[
             'ItemCategoryData' =>  ItemCategory::all(),
-            'years' => range(2020, strftime("%Y", time()))
+            'OfficeItemData' =>  OfficeItem::all(),
+            'years' => range(2023, strftime("%Y", time())),
+            'InsertBudgetData' => InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get(),
+            'InsertProcuredData' => InsertProcured::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get()
         ])->with('getItemCategory');
     }
 
@@ -68,18 +74,18 @@ class BudgetAllocationForm extends Component
             }
         }
         
-        $InsertBudgetData = InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
-        foreach ($InsertBudgetData as $index => $insertbudgetdata) {
-            $this->insertBudgets[$index]=[
-                'id'                    =>  $insertbudgetdata->id,
-                'user_id'               =>  $insertbudgetdata->user_id,
-                'item_category_id'      =>  $insertbudgetdata->item_category_id,
-                'first_quarter'         =>  $insertbudgetdata->first_quarter,
-                'second_quarter'        =>  $insertbudgetdata->second_quarter,
-                'third_quarter'         =>  $insertbudgetdata->third_quarter,
-                'fourth_quarter'        =>  $insertbudgetdata->fourth_quarter
-            ];
-        }
+        // $InsertBudgetData = InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
+        // foreach ($this->InsertBudgetData as $index => $insertbudgetdata) {
+        //     $this->insertBudgets[$index]=[
+        //         'id'                    =>  $insertbudgetdata->id,
+        //         'user_id'               =>  $insertbudgetdata->user_id,
+        //         'item_category_id'      =>  $insertbudgetdata->item_category_id,
+        //         'first_quarter'         =>  $insertbudgetdata->first_quarter,
+        //         'second_quarter'        =>  $insertbudgetdata->second_quarter,
+        //         'third_quarter'         =>  $insertbudgetdata->third_quarter,
+        //         'fourth_quarter'        =>  $insertbudgetdata->fourth_quarter
+        //     ];
+        // }
 
     }
 
@@ -106,18 +112,18 @@ class BudgetAllocationForm extends Component
             }
         }
         
-        $InsertBudgetData = InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
-        foreach ($InsertBudgetData as $index => $insertbudgetdata) {
-            $this->insertBudgets[$index]=[
-                'id'                    =>  $insertbudgetdata->id,
-                'user_id'               =>  $insertbudgetdata->user_id,
-                'item_category_id'      =>  $insertbudgetdata->item_category_id,
-                'first_quarter'         =>  $insertbudgetdata->first_quarter,
-                'second_quarter'        =>  $insertbudgetdata->second_quarter,
-                'third_quarter'         =>  $insertbudgetdata->third_quarter,
-                'fourth_quarter'        =>  $insertbudgetdata->fourth_quarter
-            ];
-        }
+        // $InsertBudgetData = InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
+        // foreach ($this->InsertBudgetData as $index => $insertbudgetdata) {
+        //     $this->insertBudgets[$index]=[
+        //         'id'                    =>  $insertbudgetdata->id,
+        //         'user_id'               =>  $insertbudgetdata->user_id,
+        //         'item_category_id'      =>  $insertbudgetdata->item_category_id,
+        //         'first_quarter'         =>  $insertbudgetdata->first_quarter,
+        //         'second_quarter'        =>  $insertbudgetdata->second_quarter,
+        //         'third_quarter'         =>  $insertbudgetdata->third_quarter,
+        //         'fourth_quarter'        =>  $insertbudgetdata->fourth_quarter
+        //     ];
+        // }
         
     }
     

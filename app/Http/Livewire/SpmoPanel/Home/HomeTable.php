@@ -4,6 +4,8 @@ namespace App\Http\Livewire\SpmoPanel\Home;
 
 use App\Models\InsertBudget;
 use App\Models\InsertProcured;
+use App\Models\ItemCategory;
+use App\Models\OfficeItem;
 use App\Models\PurchaseRequestItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -29,6 +31,7 @@ class HomeTable extends Component
             $saving_third_quarter_total,
             $saving_fourth_quarter_total;
     public  $ExistData=0;
+    public  $changeYear;
 
             protected $listeners = [
                 'refresh_home_table' => '$refresh'
@@ -37,54 +40,51 @@ class HomeTable extends Component
     public function render()
     {
         $this->emit('EmitTable');
-        date_default_timezone_set('Asia/Manila');
-        $YearNow= date('Y') ;
+        $YearNow=$this->changeYear;
         return view('livewire.spmo-panel.home.home-table',[
-            'InsertBudgetData' =>  InsertBudget::whereYear('created_at',$YearNow)->where('user_id',Auth::user()->id)->get(),
-            'InsertProcuredData' => InsertProcured::whereYear('created_at',$YearNow)->where('user_id',Auth::user()->id)->get(),
-            'PurchaseRequestItemData' => PurchaseRequestItem::all()
+            'InsertBudgetData' =>  InsertBudget::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->get(),
+            'OfficeItemData' =>  OfficeItem::where('status_id',33)->get(),
+            'InsertProcuredData' => InsertProcured::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->get(),
+            'years' => range(2023, strftime("%Y", time())),
         ])->with('getItemCategory');
     }
 
-
-    public function createPurchaseRequest($item_category_id,$quarter_id,$total_approve_budget)
+    public function mount()
     {
+        $this->changeYear=strftime("%Y", time());
+    }
 
-        // $BASE_URL = env('BASE_URL');
-        // $API_KEY = env('API_KEY');
-
-        // $SENDER = "InfoSMS";
-        // $RECIPIENT = "63"."9973613510";
-        // $MESSAGE_TEXT = "Request with PR Number: (PR Number), has been updated from (Status) Request for Quotation to (Status) For PhilGeps Posting. Please check your dashboard for other details.";
-
-        // $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
-
-        // $sendSmsApi = new SmsApi(config: $configuration);
-
-        // $destination = new SmsDestination(
-        //     to: $RECIPIENT
-        // );
-
-        // $message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
-
-        // $request = new SmsAdvancedTextualRequest(messages: [$message]);
-
-        // try {
-        //     $smsResponse = $sendSmsApi->sendSmsMessage($request);
-
-        //     echo $smsResponse->getBulkId() . PHP_EOL;
-
-        //     foreach ($smsResponse->getMessages() ?? [] as $message) {
-        //         echo sprintf('Message ID: %s, status: %s', $message->getMessageId(), $message->getStatus()?->getName()) . PHP_EOL;
-        //     }
-        // } catch (Throwable $apiException) {
-        //     echo("HTTP Code: " . $apiException->getCode() . "\n");
-        // }
+    public function doSomething()
+    {
+        unset($data);
+        unset($insertBudgets);
+        unset($first_quarter);
+        unset($second_quarter);
+        unset($third_quarter);
+        unset($fourth_quarter);
+        $YearNow=$this->changeYear;
+        $CheckExistInsertBudget=InsertBudget::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->first();
+        if (empty($CheckExistInsertBudget)) {
+            $ItemCategoryData = ItemCategory::all();
+            foreach ($ItemCategoryData as $itemcategorydata) {
+                $data = ([
+                    'user_id'                       => Auth::user()->id,
+                    'item_category_id'              => $itemcategorydata->id,
+                    'first_quarter'                 => 0,
+                    'second_quarter'                => 0,
+                    'third_quarter'                 => 0,
+                    'fourth_quarter'                => 0,
+                    'year_budget'                   => $YearNow,
+                ]);
+                InsertBudget::create($data);
+            }
+        }
+    }
 
 
-
-
+    public function createPurchaseRequest($insert_budget_id,$quarter_id,$total_approve_budget,$item_category_id)
+    {
         $this->emit('openPurchaseRequestModal');
-        $this->emit('ItemCategoryId',$item_category_id,$quarter_id,$total_approve_budget);
+        $this->emit('InsertBudgetId',$insert_budget_id,$quarter_id,$total_approve_budget,$this->changeYear,$item_category_id);
     }
 }

@@ -23,6 +23,17 @@
                                 <table class="table table-striped table-hover table-bordered" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <div class="form-group" style="text-align: left">
+                                                <select wire:model="status_id" style="max-width: 10rem" class="form-control form-control-sm" id="status_id" required>
+                                                    <option>Select Status</option>
+                                                    @foreach ($StatusData as $data)
+                                                        <option value="{{$data->id}}">{{$data->status_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('status_id') <span style="color: red;">{{ $message }}</span> @enderror
+                                            </div>
+                                        </tr>
+                                        <tr>
                                             <th colspan="7" class="text-left">{{ $ItemCategoryData->item_category ?? 'none' }}</th>
                                         </tr>
                                         <tr>
@@ -39,40 +50,40 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($insertProcureds as $index => $insertProcured)
+                                        @foreach ($insertBudgets as $index => $insertBudgeted)
                                             <tr>
                                                 <td>
                                                     {{ $index+1 }}
                                                 </td>
                                                 <td>
-                                                    <input class="form-control form-control-sm" type="text"  wire:model="insertProcureds.{{$index}}.unit_measure" size="2" required>
-                                                    @error('insertProcureds'.'.'.$index.'.'.'unit_measure') <span style="color: red">Required</span> @enderror
+                                                    <input class="form-control form-control-sm" type="text"  wire:model="insertBudgets.{{$index}}.unit_measure" size="2" required>
+                                                    @error('insertBudgets'.'.'.$index.'.'.'unit_measure') <span style="color: red">Required</span> @enderror
                                                 </td>
                                                 <td>
-                                                    <input class="form-control form-control-sm" type="text" wire:model="insertProcureds.{{$index}}.item_description" size="40" required>
-                                                    @error('insertProcureds'.'.'.$index.'.'.'item_description') <span style="color: red">Required</span> @enderror
+                                                    <input class="form-control form-control-sm" type="text" wire:model="insertBudgets.{{$index}}.item_description" size="40" required>
+                                                    @error('insertBudgets'.'.'.$index.'.'.'item_description') <span style="color: red">Required</span> @enderror
                                                 </td>
                                                 <td>
-                                                    <input class="form-control form-control-sm" type="number" wire:model="insertProcureds.{{$index}}.qty" size="1" onkeypress='return event.charCode >= 46 && event.charCode <= 57' required>
-                                                    @error('insertProcureds'.'.'.$index.'.'.'qty') <span style="color: red">Required</span> @enderror
+                                                    <input class="form-control form-control-sm" type="number" wire:model="insertBudgets.{{$index}}.qty" size="1" onkeypress='return event.charCode >= 46 && event.charCode <= 57' required>
+                                                    @error('insertBudgets'.'.'.$index.'.'.'qty') <span style="color: red">Required</span> @enderror
                                                 </td>
                                                 <td>
-                                                    <input class="form-control form-control-sm" type="text" wire:model="insertProcureds.{{$index}}.estimated_cost" size="3" onkeypress='return event.charCode >= 46 && event.charCode <= 57' required>
-                                                    @error('insertProcureds'.'.'.$index.'.'.'estimated_cost') <span style="color: red">Required</span> @enderror
+                                                    <input class="form-control form-control-sm" type="text" wire:model="insertBudgets.{{$index}}.estimated_cost" size="3" onkeypress='return event.charCode >= 46 && event.charCode <= 57' required>
+                                                    @error('insertBudgets'.'.'.$index.'.'.'estimated_cost') <span style="color: red">Required</span> @enderror
                                                     <?php
-                                                        if ($this->insertProcureds[$index]['estimated_cost']!=null) {
-                                                            $estimated_cost_total+=$this->insertProcureds[$index]['estimated_cost'];
+                                                        if ($this->insertBudgets[$index]['estimated_cost']!=null) {
+                                                            $estimated_cost_total+=$this->insertBudgets[$index]['estimated_cost'];
                                                         }
                                                     ?>
                                                 </td>
                                                 <td>
                                                     ₱
-                                                    @if($this->insertProcureds[$index]['estimated_cost']!=null&&$this->insertProcureds[$index]['qty']!=null)
-                                                    {{ number_format($this->insertProcureds[$index]['estimated_cost']*$this->insertProcureds[$index]['qty'], 2, '.', ',') ?? '0' }}
+                                                    @if($this->insertBudgets[$index]['estimated_cost']!=null&&$this->insertBudgets[$index]['qty']!=null)
+                                                    {{ number_format($this->insertBudgets[$index]['estimated_cost']*$this->insertBudgets[$index]['qty'], 2, '.', ',') ?? '0' }}
                                                     @endif
                                                     <?php
-                                                        if ($this->insertProcureds[$index]['estimated_cost']!=null&&$this->insertProcureds[$index]['qty']!=null) {
-                                                        $total+=$this->insertProcureds[$index]['estimated_cost']*$this->insertProcureds[$index]['qty'];
+                                                        if ($this->insertBudgets[$index]['estimated_cost']!=null&&$this->insertBudgets[$index]['qty']!=null) {
+                                                        $total+=$this->insertBudgets[$index]['estimated_cost']*$this->insertBudgets[$index]['qty'];
                                                         }
                                                     ?>
                                                 </td>

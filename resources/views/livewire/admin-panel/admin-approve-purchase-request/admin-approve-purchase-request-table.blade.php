@@ -31,7 +31,7 @@
                                 <td>{{ $data->getInsertProcured->getItemCategory->item_category }}</td>
                                 <td>{{ $data->getQuarter->quarter }}</td>
                                 <td>{{ $data->getStatus->status_name }}</td>
-                                <td>
+                                <td style="min-width:10rem">
                                     @if(
                                     $data->status_id==1||
                                     $data->status_id==2||
@@ -51,6 +51,7 @@
                                     )
                                     <button style="width: 5.3rem"  class="py-0 btn btn-sm btn-warning" wire:click="updateStatus({{$data->id}},{{$data->request_category_id}},{{$data->status_id}})"><i class="fas fa-edit"></i> Update</button>
                                     @endif
+                                    <button  class="py-0 btn btn-sm btn-secondary" wire:click="ViewPurchaseRequest({{$data->id}})"><i class="fas fa-eye"></i> View</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -78,6 +79,17 @@
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content">
                 <livewire:admin-panel.admin-approve-purchase-request.remark-form />
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <!-- View Purchase Request -->
+    <div wire.ignore.self class="modal fade" id="viewPuchaseRequestModal" role="dialog" aria-labelledby="viewPuchaseRequestModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <livewire:spmo-panel.view-purchase-request.view-purchase-request-form />
             </div>
             <!-- /.modal-content -->
         </div>

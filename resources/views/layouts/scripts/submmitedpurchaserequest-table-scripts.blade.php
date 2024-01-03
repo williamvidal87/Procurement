@@ -51,6 +51,14 @@
             $('#attachDocumentModal').modal('hide')
         });
         
+        window.livewire.on('openViewPuchaseRequestModal', () => {
+            $('#viewPuchaseRequestModal').modal('show')
+        });
+        
+        window.livewire.on('closeViewPuchaseRequestModal', () => {
+            $('#viewPuchaseRequestModal').modal('hide')
+        });
+        
         
         
         window.livewire.on('openSwalDelete', (PurchaseRequestID) => {

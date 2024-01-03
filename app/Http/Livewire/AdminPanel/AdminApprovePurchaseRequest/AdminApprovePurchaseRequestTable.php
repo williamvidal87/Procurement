@@ -26,4 +26,10 @@ class AdminApprovePurchaseRequestTable extends Component
         $this->emit('openStatusModal');
         $this->emit('editStatusData',$PurchaseRequestId,$RequestCategoryId,$StatusId);
     }
+
+    public function ViewPurchaseRequest($PurchaseRequestId)
+    {
+        $this->emit('openViewPuchaseRequestModal');
+        $this->emit('ViewPuchaseRequestData',$PurchaseRequestId);
+    }
 }

@@ -18,6 +18,7 @@ class OfficeItem extends Model
         'unit_measure',
         'item_description',
         'qty',
-        'estimated_cost'
+        'estimated_cost',
+        'status_id'
     ];
 }

@@ -24,4 +24,9 @@ class InsertBudget extends Model
     {
         return $this->belongsTo(ItemCategory::class,'item_category_id');
     }
+    
+    public function getStatus()
+    {
+        return $this->belongsTo(Status::class,'status_id');
+    }
 }

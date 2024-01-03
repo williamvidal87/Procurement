@@ -38,7 +38,7 @@
                                     <td>{{ $data->getInsertProcured->getItemCategory->item_category }}</td>
                                     <td>{{ $data->getQuarter->quarter }}</td>
                                     <td>{{ $data->getStatus->status_name }}</td>
-                                    <td>
+                                    <td style="min-width:10rem">
                                         @if($data->status_id==27)
                                         <button style="width: 5.5rem"  class="py-0 btn btn-sm btn-secondary" wire:click="editAdminSubmmitedPurchaseRequest({{$data->insert_procured_id}},{{ $data->quarter_id }})"><i class="fas fa-eye"></i> Review</button>
                                         @endif
@@ -48,6 +48,7 @@
                                         @if($data->status_id==29&&$data->request_category_id==1)
                                         <button style="width: 5.5rem"  class="py-0 btn btn-sm btn-warning" wire:click="updateCpbStatus({{$data->id}})"><i class="fas fa-edit"></i> Update</button>
                                         @endif
+                                        <button  class="py-0 btn btn-sm btn-secondary" wire:click="ViewPurchaseRequest({{$data->id}})"><i class="fas fa-eye"></i> View</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -108,6 +109,17 @@
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <livewire:admin-panel.admin-submitted-purchase-request.update-cpb-status-form />
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <!-- View Purchase Request -->
+    <div wire.ignore.self class="modal fade" id="viewPuchaseRequestModal" role="dialog" aria-labelledby="viewPuchaseRequestModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <livewire:spmo-panel.view-purchase-request.view-purchase-request-form />
             </div>
             <!-- /.modal-content -->
         </div>

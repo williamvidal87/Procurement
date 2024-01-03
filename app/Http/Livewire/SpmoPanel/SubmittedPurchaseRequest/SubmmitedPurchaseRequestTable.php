@@ -64,4 +64,10 @@ class SubmmitedPurchaseRequestTable extends Component
         return response()->streamDownload(fn () => print($pdfContent),$pr_no.".pdf");
         
     }
+    
+    public function View($PurchaseRequestId)
+    {
+        $this->emit('openViewPuchaseRequestModal');
+        $this->emit('ViewPuchaseRequestData',$PurchaseRequestId);
+    }
 }

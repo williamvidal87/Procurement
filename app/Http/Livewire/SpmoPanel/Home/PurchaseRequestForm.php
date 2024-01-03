@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\SpmoPanel\Home;
 
+use App\Models\InsertBudget;
 use App\Models\InsertProcured;
 use App\Models\ItemCategory;
 use App\Models\OfficeItem;
@@ -25,14 +26,15 @@ class PurchaseRequestForm extends Component
     public  $total;
     public  $total_all;
     public  $InsertProcuredId;
-    public  $ItemCategoryId,
+    public  $InsertBudgetId,
             $QuarterId,
             $total_approve_budget;
     public  $total_validation;
     public  $checkbox=[];
+    public  $ItemCategoryId;
     
     protected $listeners = [
-        'ItemCategoryId'
+        'InsertBudgetId'
     ];
     
     public function addItem()
@@ -57,14 +59,13 @@ class PurchaseRequestForm extends Component
         $this->resetValidation();
     }
     
-    public function ItemCategoryId($ItemCategoryId,$QuarterId,$total_approve_budget)
+    public function InsertBudgetId($InsertBudgetId,$QuarterId,$total_approve_budget,$YearNow,$ItemCategoryId)
     {
-        $this->ItemCategoryId=$ItemCategoryId;
+        $this->InsertBudgetId=$InsertBudgetId;
         $this->QuarterId=$QuarterId;
         $this->total_approve_budget=$total_approve_budget;
-        date_default_timezone_set('Asia/Manila');
-        $YearNow= date('Y') ;
-        $CheckExistInsertProcured=InsertProcured::whereYear('created_at',$YearNow)->where('user_id',Auth::user()->id)->first();
+        $this->ItemCategoryId=$ItemCategoryId;
+        $CheckExistInsertProcured=InsertProcured::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->first();
         if (empty($CheckExistInsertProcured)) {
             $ItemCategoryData = ItemCategory::all();
             foreach ($ItemCategoryData as $itemcategorydata) {
@@ -75,11 +76,13 @@ class PurchaseRequestForm extends Component
                     'second_quarter'                => 0,
                     'third_quarter'                 => 0,
                     'fourth_quarter'                => 0,
+                    'year_budget'                   => $YearNow,
                 ]);
                 InsertProcured::create($data);
             }
         }
-        $InsertProcuredData = InsertProcured::whereYear('created_at',$YearNow)->where('user_id',Auth::user()->id)->where('item_category_id',$this->ItemCategoryId)->first();
+        $InsertBudgetData = InsertBudget::Where('id',$this->InsertBudgetId)->first();
+        $InsertProcuredData = InsertProcured::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->where('item_category_id',$InsertBudgetData->item_category_id)->first();
         $this->InsertProcuredId=$InsertProcuredData->id;
         // $this->insertProcureds[0] = [
         //     'insert_procured_id'=>'',
@@ -91,7 +94,7 @@ class PurchaseRequestForm extends Component
         //     'estimated_cost'=> null,
         // ];
         
-        $OfficeItemData=OfficeItem::where('quarter_id',$this->QuarterId)->where('user_id',Auth::user()->id)->where('category_id',$this->ItemCategoryId)->get();
+        $OfficeItemData=OfficeItem::where('quarter_id',$this->QuarterId)->where('user_id',Auth::user()->id)->where('category_id',$InsertBudgetData->item_category_id)->get();
         foreach ($OfficeItemData as $index =>   $purchaseRequestItemData) {
             $this->insertProcureds[$index] = [
             'id'=>$purchaseRequestItemData['id'],
@@ -123,7 +126,6 @@ class PurchaseRequestForm extends Component
         $this->total_validation="lt:".$this->total_approve_budget+1;
         $this->validate([
             'insertProcureds'                                       => 'array|required',
-            'insertProcureds.*.item_no'                             => 'required',
             'insertProcureds.*.unit_measure'                        => 'required',
             'insertProcureds.*.item_description'                    => 'required',
             'insertProcureds.*.qty'                                 => 'required',
@@ -168,6 +170,10 @@ class PurchaseRequestForm extends Component
                 ]);
             }
             InsertProcured::find($this->InsertProcuredId)->update($data2);
+            $data4 = ([
+                'status_id'                 =>  34, // deactivate request
+            ]);
+            InsertBudget::find($this->InsertBudgetId)->update($data4);
             $data3 = ([
                 'user_id'               =>  Auth::user()->id,
                 'insert_procured_id'    =>  $this->InsertProcuredId,

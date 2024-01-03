@@ -9,13 +9,14 @@ use App\Models\OfficeItem;
 use App\Models\PurchaseRequest;
 use App\Models\PurchaseRequestItem;
 use App\Models\Quarter;
+use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class PurchaseRequestItemForm extends Component
 {
-    public  $insertProcureds = [];
-    public  $insert_procured_id = [],
+    public  $insertBudgets = [];
+    public  $insert_budget_id = [],
             $quarter_id = [],
             $item_no = [],
             $unit_measure = [],
@@ -25,7 +26,7 @@ class PurchaseRequestItemForm extends Component
     public  $estimated_cost_total;
     public  $total;
     public  $total_all;
-    public  $InsertProcuredId;
+    public  $InsertBudgetId;
     public  $ItemCategoryId,
             $QuarterId,
             $total_approve_budget;
@@ -33,6 +34,8 @@ class PurchaseRequestItemForm extends Component
     public  $checkbox=[];
     public  $purchaseRequestId,
             $quarter;
+    public  $UserId;
+    public  $status_id;
     
     protected $listeners = [
         'PurchaseRequestItemId'
@@ -40,8 +43,8 @@ class PurchaseRequestItemForm extends Component
     
     public function addItem()
     {
-        $this->insertProcureds[] = [
-            'insert_procured_id'=>'',
+        $this->insertBudgets[] = [
+            'insert_budget_id'=>'',
             'quarter_id'=>'',
             'item_no'=>'',
             'unit_measure'=>'',
@@ -54,8 +57,8 @@ class PurchaseRequestItemForm extends Component
 
     public function removeItem($index)
     {   
-        unset($this->insertProcureds[$index]);
-        $this->insertProcureds = array_values($this->insertProcureds);
+        unset($this->insertBudgets[$index]);
+        $this->insertBudgets = array_values($this->insertBudgets);
         $this->resetErrorBag();
         $this->resetValidation();
     }
@@ -64,9 +67,25 @@ class PurchaseRequestItemForm extends Component
     {
         $this->purchaseRequestId=$purchaseRequestId;
         $this->quarter=$quarter_id;
+        $this->QuarterId=$quarter_id;
         $PurchaseRequestData =  InsertBudget::where('id',$purchaseRequestId)->first();
         $this->ItemCategoryId=$PurchaseRequestData->item_category_id;
-
+        $this->UserId=$PurchaseRequestData->user_id;
+        $OfficeItemData=OfficeItem::where('insert_budget_id',$purchaseRequestId)->where('quarter_id',$quarter_id)->get();
+        foreach ($OfficeItemData as $index =>   $purchaseRequestItemData) {
+            $this->insertBudgets[$index] = [
+            'quarter_id'=>$purchaseRequestItemData['quarter_id'],
+            'item_no' => $purchaseRequestItemData['item_no'],
+            'unit_measure' => $purchaseRequestItemData['unit_measure'], 
+            'item_description' => $purchaseRequestItemData['item_description'], 
+            'qty' => $purchaseRequestItemData['qty'], 
+            'temp_qty' => $purchaseRequestItemData['qty'], 
+            'estimated_cost' => $purchaseRequestItemData['estimated_cost'],
+            'status_id' => $purchaseRequestItemData['status_id'],
+            ];
+        }
+        $OfficeItemData2=OfficeItem::where('insert_budget_id',$purchaseRequestId)->where('quarter_id',$quarter_id)->first();
+        $this->status_id=$OfficeItemData2->status_id ?? null;
     }
     
     public function render()
@@ -74,6 +93,7 @@ class PurchaseRequestItemForm extends Component
         return view('livewire.admin-panel.budget-allocation.purchase-request-item-form',[
             'ItemCategoryData' =>  ItemCategory::where('id',$this->ItemCategoryId)->first(),
             'QuarterData' =>  Quarter::where('id',$this->quarter)->first(),
+            'StatusData' =>  Status::whereIn('id',[33,34])->get(),
         ]);
     }
     
@@ -81,30 +101,32 @@ class PurchaseRequestItemForm extends Component
     public function store()
     {
         $this->validate([
-            'insertProcureds'                                       => 'array|required',
-            'insertProcureds.*.item_no'                             => 'required',
-            'insertProcureds.*.unit_measure'                        => 'required',
-            'insertProcureds.*.item_description'                    => 'required',
-            'insertProcureds.*.qty'                                 => 'required',
-            'insertProcureds.*.estimated_cost'                      => 'required',
+            // 'insertBudgets'                                       => 'array|required',
+            'insertBudgets.*.unit_measure'                        => 'required',
+            'insertBudgets.*.item_description'                    => 'required',
+            'insertBudgets.*.qty'                                 => 'required',
+            'insertBudgets.*.estimated_cost'                      => 'required',
+            'status_id'                                           => 'required',
         ]);
+        
         try {
-            foreach ($this->insertProcureds as $index => $insertprocured) {
-                if ($this->insertProcureds[$index]['checkbox']==true) {
+            OfficeItem::where('insert_budget_id', $this->purchaseRequestId)->delete(); // Delete all
+            foreach ($this->insertBudgets as $index => $insertbudgeted) {
                     $data = ([
-                        'insert_procured_id'            =>  $this->InsertProcuredId,
+                        'insert_budget_id'              =>  $this->purchaseRequestId,
                         'quarter_id'                    =>  $this->QuarterId,
-                        'item_no'                       =>  $this->insertProcureds[$index]['item_no'],
-                        'unit_measure'                  =>  $this->insertProcureds[$index]['unit_measure'],
-                        'item_description'              =>  $this->insertProcureds[$index]['item_description'],
-                        'qty'                           =>  $this->insertProcureds[$index]['qty'],
-                        'estimated_cost'                =>  $this->insertProcureds[$index]['estimated_cost']
+                        'user_id'                       =>  $this->UserId,
+                        'category_id'                   =>  $this->ItemCategoryId,
+                        'item_no'                       =>  $this->insertBudgets[$index]['item_no'],
+                        'unit_measure'                  =>  $this->insertBudgets[$index]['unit_measure'],
+                        'item_description'              =>  $this->insertBudgets[$index]['item_description'],
+                        'qty'                           =>  $this->insertBudgets[$index]['qty'],
+                        'estimated_cost'                =>  $this->insertBudgets[$index]['estimated_cost'],
+                        'status_id'                     =>  $this->status_id
                     ]);
+                        OfficeItem::create($data);
                     
-                    PurchaseRequestItem::create($data);
-                }
             }
-            $this->QuarterId;
             if ($this->QuarterId==1) {
                 $data2 = ([
                     'first_quarter'         =>  $this->total_all,
@@ -125,14 +147,7 @@ class PurchaseRequestItemForm extends Component
                     'fourth_quarter'         =>  $this->total_all,
                 ]);
             }
-            InsertProcured::find($this->InsertProcuredId)->update($data2);
-            $data3 = ([
-                'user_id'               =>  Auth::user()->id,
-                'insert_procured_id'    =>  $this->InsertProcuredId,
-                'quarter_id'            =>  $this->QuarterId,
-                'status_id'             =>  26,
-            ]);
-            PurchaseRequest::create($data3);
+            InsertBudget::find($this->purchaseRequestId)->update($data2);
             
             $this->emit('alert_store');
             
