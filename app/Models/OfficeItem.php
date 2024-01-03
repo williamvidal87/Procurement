@@ -10,6 +10,7 @@ class OfficeItem extends Model
     use HasFactory;
     
     protected $fillable = [
+        'insert_budget_id',
         'quarter_id',
         'user_id',
         'category_id',
@@ -17,6 +18,7 @@ class OfficeItem extends Model
         'unit_measure',
         'item_description',
         'qty',
-        'estimated_cost'
+        'estimated_cost',
+        'status_id'
     ];
 }

@@ -15,6 +15,7 @@
                                 <th>No.</th>
                                 <th>Item Category</th>
                                 <th>Quater</th>
+                                {{-- <th>Year</th> --}}
                                 <th>Status</th>
                                 <th>Remark</th>
                                 <th>Action</th>
@@ -26,16 +27,18 @@
                                     <td>{{ $data->id }}</td>
                                     <td>{{ $data->getInsertProcured->getItemCategory->item_category }}</td>
                                     <td>{{ $data->getQuarter->quarter }}</td>
+                                    {{-- <td>{{ $data->getInsertProcured->year_budget }}</td> --}}
                                     <td>{{ $data->getStatus->status_name }}</td>
                                     <td>{{ $data->remark ?? '' }}</td>
-                                    <td>
+                                    <td style="min-width:10rem">
                                         @if($data->status_id==26)
                                             {{-- <button  class="py-0 btn btn-sm btn-info" wire:click="editSubmmitedPurchaseRequest({{$data->insert_procured_id}},{{ $data->quarter_id }})"><i class="fas fa-edit"></i>Edit</button> --}}
-                                            <button  class="py-0 btn btn-sm btn-secondary" wire:click="AttachDocument({{$data->id}})"><i class="fas fa-paperclip"></i>Attach</button>
+                                            <button  class="py-0 btn btn-sm btn-info" wire:click="AttachDocument({{$data->id}})"><i class="fas fa-paperclip"></i>Attach</button>
                                         @endif
                                         @if($data->status_id==28||$data->status_id==29)
                                             <button  class="py-0 btn btn-sm btn-warning" wire:click="Print({{$data->id}})"><i class="fas fa-print"></i> Print</button>
                                         @endif
+                                        <button  class="py-0 btn btn-sm btn-secondary" wire:click="View({{$data->id}})"><i class="fas fa-eye"></i> View</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -63,6 +66,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <livewire:spmo-panel.submitted-purchase-request.attach-document-form />
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <!-- View Purchase Request -->
+    <div wire.ignore.self class="modal fade" id="viewPuchaseRequestModal" role="dialog" aria-labelledby="viewPuchaseRequestModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <livewire:spmo-panel.view-purchase-request.view-purchase-request-form />
             </div>
             <!-- /.modal-content -->
         </div>

@@ -26,7 +26,7 @@
                                     <td>{{ $data->getOffice->office ?? 'none' }}</td>
                                     <td>{{ $data->name }}</td>
                                     <td>
-                                        <button  class="py-0 btn btn-sm btn-info" wire:click="editBudgetUtilization({{$data->id}})"><i class="fas fa-edit"></i>Edit</button>
+                                        <button  class="py-0 btn btn-sm btn-info" wire:click="editBudgetUtilization({{$data->id}})"><i class="fas fa-edit"></i> Utilize</button>
                                     </td>
                                 </tr>
                             @endforeach

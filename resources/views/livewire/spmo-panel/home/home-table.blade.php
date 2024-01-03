@@ -12,7 +12,15 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Approved Budget</h6>
+                        <div class="form-group">
+                            <select wire:model="changeYear" wire:change="doSomething" style="max-width: 10rem" class="form-control form-control-sm" id="changeYear">
+                                <option>Select Year</option>
+                                @foreach ($years as $year)
+                                    <option value="{{$year}}">{{$year}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Approved Budget({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -44,7 +52,22 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},1,{{ $data->first_quarter }})">Request</a></u></code>
+                                                <?php
+                                                $already_procured=0;
+                                                foreach ($InsertProcuredData as $Data3){
+                                                    if ($data->year_budget==$Data3->year_budget&&$data->user_id==$Data3->user_id&&$data->item_category_id==$Data3->item_category_id){
+                                                        if($Data3->first_quarter>0){
+                                                            $already_procured=1;
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+                                                @foreach ($OfficeItemData as $Data2)
+                                                    @if ($data->id==$Data2->insert_budget_id&&$Data2->quarter_id==1&&$already_procured==0)
+                                                        <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},1,{{ $data->first_quarter }},{{ $data->item_category_id }})">Request</a></u></code>
+                                                        @break
+                                                    @endif
+                                                @endforeach
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->second_quarter, 2, '.', ',') ?? '0' }}
@@ -55,7 +78,22 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},2,{{ $data->second_quarter }})">Request</a></u></code>
+                                                <?php
+                                                $already_procured=0;
+                                                foreach ($InsertProcuredData as $Data3){
+                                                    if ($data->year_budget==$Data3->year_budget&&$data->user_id==$Data3->user_id&&$data->item_category_id==$Data3->item_category_id){
+                                                        if($Data3->second_quarter>0){
+                                                            $already_procured=1;
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+                                                @foreach ($OfficeItemData as $Data2)
+                                                    @if ($data->id==$Data2->insert_budget_id&&$Data2->quarter_id==2&&$already_procured==0)
+                                                        <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},2,{{ $data->second_quarter }},{{ $data->item_category_id }})">Request</a></u></code>
+                                                        @break
+                                                    @endif
+                                                @endforeach
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->third_quarter, 2, '.', ',') ?? '0' }}
@@ -67,19 +105,21 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                    
-                                                    $ExistData=0;
-                                                    foreach ($InsertProcuredData as $insertProcuredData) {
-                                                        if ($insertProcuredData->item_category_id==$data->item_category_id) {
-                                                            foreach ($PurchaseRequestItemData as $purchaseRequestItemData) {
-                                                                if ($insertProcuredData->id==$purchaseRequestItemData->insert_procured_id) {
-                                                                    $ExistData=1;
-                                                                }
-                                                            }
+                                                $already_procured=0;
+                                                foreach ($InsertProcuredData as $Data3){
+                                                    if ($data->year_budget==$Data3->year_budget&&$data->user_id==$Data3->user_id&&$data->item_category_id==$Data3->item_category_id){
+                                                        if($Data3->third_quarter>0){
+                                                            $already_procured=1;
                                                         }
                                                     }
+                                                }
                                                 ?>
-                                                    <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->getItemCategory->id}},3,{{ $data->third_quarter }})">Request</a></u></code>
+                                                @foreach ($OfficeItemData as $Data2)
+                                                    @if ($data->id==$Data2->insert_budget_id&&$Data2->quarter_id==3&&$already_procured==0)
+                                                    <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},3,{{ $data->third_quarter }},{{ $data->item_category_id }})">Request</a></u></code>
+                                                        @break
+                                                    @endif
+                                                @endforeach
                                             </td>
                                             <td>
                                                 ₱{{ number_format($data->fourth_quarter, 2, '.', ',') ?? '0'  }}
@@ -91,19 +131,21 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                    
-                                                    $ExistData=0;
-                                                    foreach ($InsertProcuredData as $insertProcuredData) {
-                                                        if ($insertProcuredData->item_category_id==$data->item_category_id) {
-                                                            foreach ($PurchaseRequestItemData as $purchaseRequestItemData) {
-                                                                if ($insertProcuredData->id==$purchaseRequestItemData->insert_procured_id) {
-                                                                    $ExistData=1;
-                                                                }
-                                                            }
+                                                $already_procured=0;
+                                                foreach ($InsertProcuredData as $Data3){
+                                                    if ($data->year_budget==$Data3->year_budget&&$data->user_id==$Data3->user_id&&$data->item_category_id==$Data3->item_category_id){
+                                                        if($Data3->fourth_quarter>0){
+                                                            $already_procured=1;
                                                         }
                                                     }
+                                                }
                                                 ?>
-                                                    <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->getItemCategory->id}},4,{{ $data->fourth_quarter }})">Request</a></u></code>
+                                                @foreach ($OfficeItemData as $Data2)
+                                                    @if ($data->id==$Data2->insert_budget_id&&$Data2->quarter_id==4&&$already_procured==0)
+                                                    <code><u><a href="javascript: void(0)" wire:click="createPurchaseRequest({{$data->id}},4,{{ $data->fourth_quarter }},{{ $data->item_category_id }})">Request</a></u></code>
+                                                        @break
+                                                    @endif
+                                                @endforeach
                                             </td>
                                         </tr>
                                     @endforeach
@@ -140,7 +182,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Amount of Procured Items</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Amount of Procured Items({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -223,7 +265,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Savings from Purchase Request</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Savings from Purchase Request({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">

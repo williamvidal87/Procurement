@@ -15,6 +15,7 @@ class CreateOfficeItemsTable extends Migration
     {
         Schema::create('office_items', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('insert_budget_id')->nullable();
             $table->unsignedBigInteger('quarter_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
@@ -23,10 +24,13 @@ class CreateOfficeItemsTable extends Migration
             $table->longText('item_description');
             $table->string('qty');
             $table->string('estimated_cost');
+            $table->unsignedBigInteger('status_id')->nullable();
             
+            $table->foreign('insert_budget_id')->references('id')->on('insert_budgets');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('item_categories');
             $table->foreign('quarter_id')->references('id')->on('quarters');
+            $table->foreign('status_id')->references('id')->on('statuses');
             $table->timestamps();
         });
     }

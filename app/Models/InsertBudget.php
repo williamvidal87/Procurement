@@ -16,10 +16,17 @@ class InsertBudget extends Model
         'second_quarter',
         'third_quarter',
         'fourth_quarter',
+        'year_budget',
+        'status_id'
     ];
     
     public function getItemCategory()
     {
         return $this->belongsTo(ItemCategory::class,'item_category_id');
+    }
+    
+    public function getStatus()
+    {
+        return $this->belongsTo(Status::class,'status_id');
     }
 }

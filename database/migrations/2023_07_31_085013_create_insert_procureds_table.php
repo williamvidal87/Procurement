@@ -17,6 +17,7 @@ class CreateInsertProcuredsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('item_category_id')->nullable();
+            $table->year('year_budget');
             
             $table->decimal('first_quarter', 11, 2)->nullable();
             $table->decimal('second_quarter', 11, 2)->nullable();

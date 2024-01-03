@@ -39,4 +39,10 @@ class AdminSubmittedPurchaseRequestTable extends Component
         $this->emit('editCpbStatusData',$PurchaseRequestId);
     }
 
+    public function ViewPurchaseRequest($PurchaseRequestId)
+    {
+        $this->emit('openViewPuchaseRequestModal');
+        $this->emit('ViewPuchaseRequestData',$PurchaseRequestId);
+    }
+
 }

@@ -26,7 +26,7 @@
                                     <td>{{ $data->getOffice->office ?? 'none' }}</td>
                                     <td>{{ $data->name }}</td>
                                     <td>
-                                        <button  class="py-0 btn btn-sm btn-info" wire:click="editBudgetUtilization({{$data->id}})"><i class="fas fa-edit"></i>Edit</button>
+                                        <button  class="py-0 btn btn-sm btn-info" wire:click="editBudgetUtilization({{$data->id}})"><i class="fas fa-edit"></i> Allocate</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -43,6 +43,18 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <livewire:admin-panel.budget-allocation.budget-allocation-form />
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    
+    <!-- CREATE PURCHASE REQUEST ITEM-->
+    <div wire.ignore.self class="modal fade" id="purchaserequestitemModal" role="dialog" aria-labelledby="purchaserequestitemModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <livewire:admin-panel.budget-allocation.purchase-request-item-form />
             </div>
             <!-- /.modal-content -->
         </div>
