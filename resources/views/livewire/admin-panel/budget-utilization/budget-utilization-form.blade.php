@@ -14,6 +14,14 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
+                        <div class="form-group">
+                            <select wire:model="changeYear" wire:change="doSomething" style="max-width: 10rem" class="form-control form-control-sm" id="changeYear">
+                                <option>Select Year</option>
+                                @foreach ($years as $year)
+                                    <option value="{{$year}}">{{$year}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Amount of Procured Items</h6>
                     </div>
                     <!-- Card Body -->
