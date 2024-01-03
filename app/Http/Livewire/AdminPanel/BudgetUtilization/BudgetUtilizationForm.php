@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\AdminPanel\BudgetUtilization;
 
+use App\Models\InsertBudget;
 use App\Models\InsertProcured;
 use App\Models\ItemCategory;
 use App\Models\User;
@@ -21,25 +22,30 @@ class BudgetUtilizationForm extends Component
             $second_quarter_total = 0,
             $third_quarter_total = 0,
             $fourth_quarter_total = 0;
-    
+    public  $changeYear;
     public  $UserID;
     
     protected $listeners = ['editBudgetUtilizationData'];
     
     public function render()
     {
+        $YearNow=$this->changeYear;
         return view('livewire.admin-panel.budget-utilization.budget-utilization-form',[
-            'ItemCategoryData' =>  ItemCategory::all()
+            'ItemCategoryData' =>  ItemCategory::all(),
+            'years' => range(2023, strftime("%Y", time())),
         ]);
     }
 
-    public function editBudgetUtilizationData($user_id)
+    public function doSomething()
     {
-        $this->emit('EmitTable');
-        date_default_timezone_set('Asia/Manila');
-        $YearNow= date('Y') ;
-        $this->user_id=$user_id;
-        $CheckExistInsertProcured=InsertProcured::whereYear('created_at',$YearNow)->where('user_id',$this->user_id)->first();
+        unset($data);
+        unset($insertProcureds);
+        unset($first_quarter);
+        unset($second_quarter);
+        unset($third_quarter);
+        unset($fourth_quarter);
+        $YearNow=$this->changeYear;
+        $CheckExistInsertProcured=InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
         if (empty($CheckExistInsertProcured)) {
             $ItemCategoryData = ItemCategory::all();
             foreach ($ItemCategoryData as $itemcategorydata) {
@@ -50,6 +56,32 @@ class BudgetUtilizationForm extends Component
                     'second_quarter'                => 0,
                     'third_quarter'                 => 0,
                     'fourth_quarter'                => 0,
+                    'year_budget'                   => $YearNow,
+                ]);
+                InsertProcured::create($data);
+            }
+        }
+
+    }
+
+    public function editBudgetUtilizationData($user_id)
+    {
+        $this->emit('EmitTable');
+        date_default_timezone_set('Asia/Manila');
+        $YearNow= date('Y') ;
+        $this->user_id=$user_id;
+        $CheckExistInsertProcured=InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+        if (empty($CheckExistInsertProcured)) {
+            $ItemCategoryData = ItemCategory::all();
+            foreach ($ItemCategoryData as $itemcategorydata) {
+                $data = ([
+                    'user_id'                       => $this->user_id,
+                    'item_category_id'              => $itemcategorydata->id,
+                    'first_quarter'                 => 0,
+                    'second_quarter'                => 0,
+                    'third_quarter'                 => 0,
+                    'fourth_quarter'                => 0,
+                    'year_budget'                   => $YearNow,
                 ]);
                 InsertProcured::create($data);
             }

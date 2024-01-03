@@ -51,17 +51,25 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <a style="color: <?php 
-                                                $color = "red";
+                                                <a style="<?php
+                                                $color = "color: red;";
                                                 foreach($OfficeItemData as $data2){
                                                     if($insertBudget->id==$data2->insert_budget_id&&1==$data2->quarter_id&&$insertBudget->item_category_id==$data2->category_id){
                                                         if($data2->status_id==33){
-                                                            $color = "green";
+                                                            $color = "color: green;";
+                                                        }
+                                                    }
+                                                }
+                                                foreach ($InsertProcuredData as $insertProcured){
+                                                    if($insertBudget->user_id==$insertProcured->user_id&&$insertBudget->item_category_id==$insertProcured->item_category_id&&$insertBudget->year_budget==$insertProcured->year_budget){
+                                                        if($insertProcured->first_quarter>0){
+                                                            echo "pointer-events: none;";
+                                                            $color = "color: #000000;";
                                                         }
                                                     }
                                                 }
                                                 echo $color;
-                                                ?>;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},1)">₱{{ number_format($insertBudget->first_quarter, 2, '.', ',') ?? '0' }}</a>
+                                                ?>" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},1)">₱{{ number_format($insertBudget->first_quarter, 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($insertBudget->first_quarter!=null) {
                                                         $first_quarter_total+=$insertBudget->first_quarter;
@@ -69,17 +77,25 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <a style="color: <?php 
-                                                $color = "red";
+                                                <a style="<?php
+                                                $color = "color: red;";
                                                 foreach($OfficeItemData as $data2){
                                                     if($insertBudget->id==$data2->insert_budget_id&&2==$data2->quarter_id&&$insertBudget->item_category_id==$data2->category_id){
                                                         if($data2->status_id==33){
-                                                            $color = "green";
+                                                            $color = "color: green;";
+                                                        }
+                                                    }
+                                                }
+                                                foreach ($InsertProcuredData as $insertProcured){
+                                                    if($insertBudget->user_id==$insertProcured->user_id&&$insertBudget->item_category_id==$insertProcured->item_category_id&&$insertBudget->year_budget==$insertProcured->year_budget){
+                                                        if($insertProcured->second_quarter>0){
+                                                            echo "pointer-events: none;";
+                                                            $color = "color: #000000;";
                                                         }
                                                     }
                                                 }
                                                 echo $color;
-                                                ?>;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},2)">₱{{ number_format($insertBudget->second_quarter, 2, '.', ',') ?? '0' }}</a>
+                                                ?>" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},2)">₱{{ number_format($insertBudget->second_quarter, 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($insertBudget->second_quarter!=null) {
                                                         $second_quarter_total+=$insertBudget->second_quarter;
@@ -87,17 +103,25 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <a style="color: <?php 
-                                                $color = "red";
+                                                <a style="<?php
+                                                $color = "color: red;";
                                                 foreach($OfficeItemData as $data2){
                                                     if($insertBudget->id==$data2->insert_budget_id&&3==$data2->quarter_id&&$insertBudget->item_category_id==$data2->category_id){
                                                         if($data2->status_id==33){
-                                                            $color = "green";
+                                                            $color = "color: green;";
+                                                        }
+                                                    }
+                                                }
+                                                foreach ($InsertProcuredData as $insertProcured){
+                                                    if($insertBudget->user_id==$insertProcured->user_id&&$insertBudget->item_category_id==$insertProcured->item_category_id&&$insertBudget->year_budget==$insertProcured->year_budget){
+                                                        if($insertProcured->third_quarter>0){
+                                                            echo "pointer-events: none;";
+                                                            $color = "color: #000000;";
                                                         }
                                                     }
                                                 }
                                                 echo $color;
-                                                ?>;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},3)">₱{{ number_format($insertBudget->third_quarter, 2, '.', ',') ?? '0' }}</a>
+                                                ?>" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},3)">₱{{ number_format($insertBudget->third_quarter, 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($insertBudget->third_quarter!=null) {
                                                         $third_quarter_total+=$insertBudget->third_quarter;
@@ -123,7 +147,7 @@
                                                     }
                                                 }
                                                 echo $color;
-                                                ?>;" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},4)">₱{{ number_format($insertBudget->fourth_quarter, 2, '.', ',') ?? '0' }}</a>
+                                                ?>" href="javascript: void(0)" wire:click="createPurchaseRequestItem({{$purchaseRequestId}},4)">₱{{ number_format($insertBudget->fourth_quarter, 2, '.', ',') ?? '0' }}</a>
                                                 <?php
                                                     if ($insertBudget->fourth_quarter!=null) {
                                                         $fourth_quarter_total+=$insertBudget->fourth_quarter;
