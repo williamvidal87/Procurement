@@ -281,7 +281,228 @@ class SpmoSeeder extends Seeder
             ,
             'estimated_cost' =>   2800.00 
             ,
-            ],
+            ],[
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'pcs',
+                'item_description' => "Ballpen, Black (0.5mm), Good Quality				
+                ",
+                'qty' => 15
+                ,
+                'estimated_cost' =>   24.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'reams',
+                'item_description' => "Bondpaper, Multi-Copy, Size: A4 ,70 gsm, Sub 20				
+                ",
+                'qty' => 50
+                ,
+                'estimated_cost' =>   252.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'reams',
+                'item_description' => "Bondpaper, Multi-Copy, Size: Legal ,70 gsm, Sub 20				
+                ",
+                'qty' => 100
+                ,
+                'estimated_cost' =>   300.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'box',
+                'item_description' => "ENVELOPE, Documentary, Legal (500 pcs per box)				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   1800.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'box',
+                'item_description' => "ENVELOPE, Expanding, Kraft (100 pcs per box) 				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   1800.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'box',
+                'item_description' => "FOLDER, White, Size: Legal				
+                ",
+                'qty' => 2
+                ,
+                'estimated_cost' =>   840.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'box',
+                'item_description' => "PENCIL, lead, with eraser, #2 (12 pcs per box), Good Quality				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   115.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'set',
+                'item_description' => "Printer Ink for EPSON L220 (C,M,Y,BK) 				
+                ",
+                'qty' => 5
+                ,
+                'estimated_cost' =>   1680.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'book',
+                'item_description' => "RECORD BOOK, 500 pages 				
+                ",
+                'qty' => 5
+                ,
+                'estimated_cost' =>   144.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'bottle',
+                'item_description' => "STAMP PAD INK, purple or violet				
+                ",
+                'qty' => 3
+                ,
+                'estimated_cost' =>   60.00 
+                ,
+                ],
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 1,
+                'item_no' => 1,
+                'unit_measure' => 'box
+                ',
+                'item_description' => "STAPLE WIRE for heavy duty stapler				
+                ",
+                'qty' => 15
+                ,
+                'estimated_cost' =>   102.00 
+                ,
+                ],
+                
+                
+                
+                
+                
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 2,
+                'item_no' => 1,
+                'unit_measure' => 'unit
+                ',
+                'item_description' => "Digital Photocopying Machine, Colored, Heavy Duty				
+                Specs:				
+                Supported Paper Size: A4, A3, Legal, Short				
+                with free delivery & installation				
+                with 1 year warranty				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   120000.00 
+                ,
+                ],
+                
+                
+                
+                
+                
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 3,
+                'item_no' => 1,
+                'unit_measure' => 'lot',
+                'item_description' => "Repair / Rehabilitaiton / Improvement of Existing Supply Property Management Office (SPMO)				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   3500000.00 
+                ,
+                ],
+                
+                
+                
+                
+                
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 4,
+                'item_no' => 1,
+                'unit_measure' => 'package',
+                'item_description' => "Repair of Defective Office Printer (3 EPSON L220, 4 EPSON 3110)				
+                Inclusion:				
+                Repair Materials/Parts, Labor, Clean-up / Installation				
+                ",
+                'qty' => 1,
+                'estimated_cost' =>   25000.00 
+                ,
+                ],
+                
+                
+                
+                
+                
+                [
+                'quarter_id' => 1, 
+                'user_id' => 2,
+                'category_id' => 5,
+                'item_no' => 1,
+                'unit_measure' => 'unit',
+                'item_description' => "Office Table with Drawers (Wooden)				
+                Specs:				
+                Dimension: W120 x D60 x H75 cm				
+                Material: MDF board				
+                – With center and both side drawers and cabinet				
+                – Locking system with key included				
+                ",
+                'qty' => 3
+                ,
+                'estimated_cost' =>   8500.00 
+                ,
+                ],
         ];
         
         OfficeItem::insert($officeitem);

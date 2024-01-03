@@ -19,7 +19,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '1',
-            'first_quarter' => 0,
+            'first_quarter' => 59185.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 59185.00,
@@ -28,7 +28,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '2',
-            'first_quarter' => 0,
+            'first_quarter' => 120000.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 120000.00,
@@ -37,7 +37,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '3',
-            'first_quarter' => 0,
+            'first_quarter' => 3500000.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 3500000.00,
@@ -46,7 +46,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '4',
-            'first_quarter' => 0,
+            'first_quarter' => 25000.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 25000.00,
@@ -55,7 +55,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '5',
-            'first_quarter' => 0,
+            'first_quarter' => 25500.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 25500.00,
@@ -64,7 +64,7 @@ class InsertBudgetSeeder extends Seeder
             [ 
             'user_id' => '2',
             'item_category_id' => '6',
-            'first_quarter' => 0,
+            'first_quarter' => 55400.00,
             'second_quarter' => 0,
             'third_quarter' =>  0,
             'fourth_quarter' => 55400.00,
