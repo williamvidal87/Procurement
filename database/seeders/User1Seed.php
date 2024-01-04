@@ -18,8 +18,8 @@ class User1Seed extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'pcs',
@@ -31,8 +31,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'reams',
@@ -44,8 +44,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'reams',
@@ -57,8 +57,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -69,8 +69,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -81,8 +81,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -94,8 +94,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -106,8 +106,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'set',
@@ -119,8 +119,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'book',
@@ -132,8 +132,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'bottle',
@@ -145,8 +145,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box
@@ -164,8 +164,8 @@ class User1Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
             'unit_measure' => 'unit
@@ -186,8 +186,8 @@ class User1Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 3,
             'item_no' => 1,
             'unit_measure' => 'lot',
@@ -203,8 +203,8 @@ class User1Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 4,
             'item_no' => 1,
             'unit_measure' => 'package',
@@ -222,8 +222,8 @@ class User1Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 5,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -251,8 +251,8 @@ class User1Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -268,8 +268,8 @@ class User1Seed extends Seeder
             ,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 9,
+            'quarter_id' => 1, 
+            'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
             'unit_measure' => 'pcs',
@@ -292,62 +292,62 @@ class User1Seed extends Seeder
         date_default_timezone_set('Etc/GMT-8');
         $isert_budget = [
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '1',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 59185.00,
+            'second_quarter' => 59185.00,
             'third_quarter' =>  59185.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 59185.00,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '2',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 120000,
+            'second_quarter' => 120000,
             'third_quarter' =>  120000.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 120000,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '3',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 3500000,
+            'second_quarter' => 3500000,
             'third_quarter' =>  3500000.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 3500000,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '4',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 25000,
+            'second_quarter' => 25000,
             'third_quarter' =>  25000.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 25000,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '5',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 25500,
+            'second_quarter' => 25500,
             'third_quarter' =>  25500.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 25500,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '9',
+            'user_id' => '2',
             'item_category_id' => '6',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 25500,
+            'second_quarter' => 25500,
             'third_quarter' =>  55400.00,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 25500,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],

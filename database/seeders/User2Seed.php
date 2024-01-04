@@ -18,8 +18,8 @@ class User2Seed extends Seeder
         $officeitem = [
         
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'pcs',
@@ -28,8 +28,8 @@ class User2Seed extends Seeder
             'estimated_cost' =>  24.00,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'reams',
@@ -38,8 +38,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 300,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -48,8 +48,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 1800,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -58,8 +58,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 840,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'box',
@@ -68,8 +68,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 115,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'pcs',
@@ -78,8 +78,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 100,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'bottle',
@@ -88,8 +88,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 85,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'book',
@@ -98,8 +98,8 @@ class User2Seed extends Seeder
             'estimated_cost' =>  250.00,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 1,
             'item_no' => 1,
             'unit_measure' => 'pcs',
@@ -116,8 +116,8 @@ class User2Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -126,8 +126,8 @@ class User2Seed extends Seeder
             'estimated_cost' =>  25000,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -142,8 +142,8 @@ class User2Seed extends Seeder
             'estimated_cost' =>  350,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -156,8 +156,8 @@ class User2Seed extends Seeder
             'estimated_cost' =>  1500,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 2,
             'item_no' => 1,
             'unit_measure' => 'unit',
@@ -179,8 +179,8 @@ class User2Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 3,
             'item_no' => 1,
             'unit_measure' => 'lot',
@@ -195,8 +195,8 @@ class User2Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 4,
             'item_no' => 1,
             'unit_measure' => 'lot',
@@ -211,8 +211,8 @@ class User2Seed extends Seeder
             
             
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
             'unit_measure' => 'liters',
@@ -221,8 +221,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 125,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
             'unit_measure' => 'bottle',
@@ -231,8 +231,8 @@ class User2Seed extends Seeder
             'estimated_cost' => 95,
             ],
             [
-            'quarter_id' => 4, 
-            'user_id' => 10,
+            'quarter_id' => 2, 
+            'user_id' => 2,
             'category_id' => 6,
             'item_no' => 1,
             'unit_measure' => 'kilo',
@@ -246,47 +246,47 @@ class User2Seed extends Seeder
         date_default_timezone_set('Etc/GMT-8');
         $isert_budget = [
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '1',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 20370,
+            'second_quarter' => 20370,
             'third_quarter' => 20370,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 20370,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '2',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 33700,
+            'second_quarter' => 33700,
             'third_quarter' => 33700,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 33700,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '3',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 7500000,
+            'second_quarter' => 7500000,
             'third_quarter' => 7500000,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 7500000,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '4',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 850000,
+            'second_quarter' => 850000,
             'third_quarter' => 850000,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 850000,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '5',
             'first_quarter' => 0,
             'second_quarter' => 0,
@@ -296,12 +296,12 @@ class User2Seed extends Seeder
             'year_budget' => '2023',
             ],
             [ 
-            'user_id' => '10',
+            'user_id' => '2',
             'item_category_id' => '6',
-            'first_quarter' => 0,
-            'second_quarter' => 0,
+            'first_quarter' => 53250,
+            'second_quarter' => 53250,
             'third_quarter' => 53250,
-            'fourth_quarter' => 0,
+            'fourth_quarter' => 532500,
             'created_at' => date('Y-m-d H:i:s'),
             'year_budget' => '2023',
             ],
