@@ -45,7 +45,7 @@ class HomeTable extends Component
             'InsertBudgetData' =>  InsertBudget::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->get(),
             'OfficeItemData' =>  OfficeItem::where('status_id',33)->get(),
             'InsertProcuredData' => InsertProcured::where('year_budget',$YearNow)->where('user_id',Auth::user()->id)->get(),
-            'years' => range(2023, strftime("%Y", time())),
+            'years' => range(2023, strftime("%Y", time())+2),
         ])->with('getItemCategory');
     }
 
