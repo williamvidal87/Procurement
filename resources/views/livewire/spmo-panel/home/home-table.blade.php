@@ -14,7 +14,7 @@
                     <div class="card-header">
                         <div class="form-group">
                             <select wire:model="changeYear" wire:change="doSomething" style="max-width: 10rem" class="form-control form-control-sm" id="changeYear">
-                                <option>Select Year</option>
+                                
                                 @foreach ($years as $year)
                                     <option value="{{$year}}">{{$year}}</option>
                                 @endforeach
