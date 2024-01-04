@@ -33,7 +33,13 @@ class BudgetUtilizationForm extends Component
         return view('livewire.admin-panel.budget-utilization.budget-utilization-form',[
             'ItemCategoryData' =>  ItemCategory::all(),
             'years' => range(2023, strftime("%Y", time())),
+            // 'InsertProcuredData' => InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->get()
         ]);
+    }
+
+    public function mount(){
+
+        
     }
 
     public function doSomething()
@@ -62,13 +68,28 @@ class BudgetUtilizationForm extends Component
             }
         }
 
+        
+        
+        $InsertProcuredData = InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
+        foreach ($InsertProcuredData as $index => $insertprocureddata) {
+            $this->insertProcureds[$index]=[
+                'id'                    =>  $insertprocureddata->id,
+                'user_id'               =>  $insertprocureddata->user_id,
+                'item_category_id'      =>  $insertprocureddata->item_category_id,
+                'first_quarter'         =>  $insertprocureddata->first_quarter,
+                'second_quarter'        =>  $insertprocureddata->second_quarter,
+                'third_quarter'         =>  $insertprocureddata->third_quarter,
+                'fourth_quarter'        =>  $insertprocureddata->fourth_quarter
+            ];
+        }
+
     }
 
     public function editBudgetUtilizationData($user_id)
     {
         $this->emit('EmitTable');
-        date_default_timezone_set('Asia/Manila');
-        $YearNow= date('Y') ;
+        $this->changeYear=strftime("%Y", time());
+        $YearNow= $this->changeYear;
         $this->user_id=$user_id;
         $CheckExistInsertProcured=InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
         if (empty($CheckExistInsertProcured)) {
@@ -87,7 +108,7 @@ class BudgetUtilizationForm extends Component
             }
         }
         
-        $InsertProcuredData = InsertProcured::whereYear('created_at',$YearNow)->where('user_id',$this->user_id)->get();
+        $InsertProcuredData = InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
         foreach ($InsertProcuredData as $index => $insertprocureddata) {
             $this->insertProcureds[$index]=[
                 'id'                    =>  $insertprocureddata->id,

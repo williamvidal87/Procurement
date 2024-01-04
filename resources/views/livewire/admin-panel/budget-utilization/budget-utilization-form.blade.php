@@ -22,7 +22,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Amount of Procured Items</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Amount of Procured Items({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
