@@ -32,7 +32,7 @@ class BudgetUtilizationForm extends Component
         $YearNow=$this->changeYear;
         return view('livewire.admin-panel.budget-utilization.budget-utilization-form',[
             'ItemCategoryData' =>  ItemCategory::all(),
-            'years' => range(2023, strftime("%Y", time())),
+            'years' => range(2023, strftime("%Y", time())+1),
             // 'InsertProcuredData' => InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->get()
         ]);
     }
@@ -51,7 +51,8 @@ class BudgetUtilizationForm extends Component
         unset($third_quarter);
         unset($fourth_quarter);
         $YearNow=$this->changeYear;
-        $CheckExistInsertProcured=InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+        $CheckExistInsertProcured=InsertProcured::where('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+        
         if (empty($CheckExistInsertProcured)) {
             $ItemCategoryData = ItemCategory::all();
             foreach ($ItemCategoryData as $itemcategorydata) {
@@ -70,7 +71,8 @@ class BudgetUtilizationForm extends Component
 
         
         
-        $InsertProcuredData = InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
+        $InsertProcuredData = InsertProcured::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get();
+        
         foreach ($InsertProcuredData as $index => $insertprocureddata) {
             $this->insertProcureds[$index]=[
                 'id'                    =>  $insertprocureddata->id,

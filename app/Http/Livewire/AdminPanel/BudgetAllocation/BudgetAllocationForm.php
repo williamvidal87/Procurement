@@ -36,7 +36,7 @@ class BudgetAllocationForm extends Component
         return view('livewire.admin-panel.budget-allocation.budget-allocation-form',[
             'ItemCategoryData' =>  ItemCategory::all(),
             'OfficeItemData' =>  OfficeItem::all(),
-            'years' => range(2023, strftime("%Y", time())),
+            'years' => range(2023, strftime("%Y", time())+1),
             'InsertBudgetData' => InsertBudget::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get(),
             'InsertProcuredData' => InsertProcured::where('year_budget',$YearNow)->where('user_id',$this->user_id)->get()
         ])->with('getItemCategory');

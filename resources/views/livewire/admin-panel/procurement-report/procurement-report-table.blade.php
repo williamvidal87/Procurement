@@ -312,13 +312,13 @@
                                                                         $second_quarter+=$insertBudgetData->second_quarter;
                                                                     ?>
                                                                 @endif
-                                                                @foreach($InsertProcuredData as $insertProcuredData)
-                                                                    @if($insertProcuredData->item_category_id==$data->id)
-                                                                        <?php
-                                                                            $second_quarter-=$insertProcuredData->second_quarter;
-                                                                        ?>
-                                                                    @endif
-                                                                @endforeach
+                                                            @endforeach
+                                                            @foreach($InsertProcuredData as $insertProcuredData)
+                                                                @if($insertProcuredData->item_category_id==$data->id)
+                                                                    <?php
+                                                                        $second_quarter-=$insertProcuredData->second_quarter;
+                                                                    ?>
+                                                                @endif
                                                             @endforeach
                                                             {{ number_format($second_quarter, 2, '.', ',') ?? '0' }}
                                                             <?php
