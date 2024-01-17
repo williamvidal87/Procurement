@@ -56,7 +56,23 @@
                                                     {{ $index+1 }}
                                                 </td>
                                                 <td>
-                                                    <input class="form-control form-control-sm" type="text"  wire:model="insertBudgets.{{$index}}.unit_measure" size="2" required>
+                                                    <select wire:model="insertBudgets.{{$index}}.unit_measure" class="form-control form-control-sm" required>
+                                                        <option value="">none</option>
+                                                        <option value="book">book</option>
+                                                        <option value="bottle">bottle</option>
+                                                        <option value="box">box</option>
+                                                        <option value="cart">cart</option>
+                                                        <option value="lot">lot</option>
+                                                        <option value="pack">pack</option>
+                                                        <option value="pad">pad</option>
+                                                        <option value="pair">pair</option>
+                                                        <option value="piece">piece</option>
+                                                        <option value="ream">ream</option>
+                                                        <option value="roll">roll</option>
+                                                        <option value="set">set</option>
+                                                        <option value="unit">unit</option>
+                                                    </select>
+                                                    {{-- <input class="form-control form-control-sm" type="text"  wire:model="insertBudgets.{{$index}}.unit_measure" size="2" required> --}}
                                                     @error('insertBudgets'.'.'.$index.'.'.'unit_measure') <span style="color: red">Required</span> @enderror
                                                 </td>
                                                 <td>
