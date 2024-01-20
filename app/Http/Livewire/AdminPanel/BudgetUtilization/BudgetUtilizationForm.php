@@ -24,6 +24,7 @@ class BudgetUtilizationForm extends Component
             $fourth_quarter_total = 0;
     public  $changeYear;
     public  $UserID;
+    public  $UserName;
     
     protected $listeners = ['editBudgetUtilizationData'];
     
@@ -94,6 +95,7 @@ class BudgetUtilizationForm extends Component
         $YearNow= $this->changeYear;
         $this->user_id=$user_id;
         $CheckExistInsertProcured=InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+
         if (empty($CheckExistInsertProcured)) {
             $ItemCategoryData = ItemCategory::all();
             foreach ($ItemCategoryData as $itemcategorydata) {
@@ -122,6 +124,11 @@ class BudgetUtilizationForm extends Component
                 'fourth_quarter'        =>  $insertprocureddata->fourth_quarter
             ];
         }
+
+        
+        $checkUserName=InsertProcured::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+        $this->UserName=$checkUserName->getUser->getOffice->office;
+        // $this->UserName=$checkUserName->getOffice->office;
         
     }
     

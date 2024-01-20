@@ -34,6 +34,9 @@
                                             </div>
                                         </tr>
                                         <tr>
+                                            <th colspan="7" class="text-left">{{ $this->UserName ?? 'none' }}</th>
+                                        </tr>
+                                        <tr>
                                             <th colspan="7" class="text-left">{{ $ItemCategoryData->item_category ?? 'none' }}</th>
                                         </tr>
                                         <tr>

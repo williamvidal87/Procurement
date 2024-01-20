@@ -24,6 +24,7 @@ class BudgetAllocationForm extends Component
             $fourth_quarter_total = 0;
     public  $changeYear;
     public  $UserID;
+    public  $UserName;
     
     protected $listeners = [
         'editBudgetUtilizationData',
@@ -45,7 +46,7 @@ class BudgetAllocationForm extends Component
     public function createPurchaseRequestItem($purchaseRequestId,$quarter_id)
     {
         $this->emit('openPurchaseRequestItemModal');
-        $this->emit('PurchaseRequestItemId',$purchaseRequestId,$quarter_id);
+        $this->emit('PurchaseRequestItemId',$purchaseRequestId,$quarter_id,$this->UserName);
     }
 
     public function doSomething()
@@ -124,6 +125,10 @@ class BudgetAllocationForm extends Component
         //         'fourth_quarter'        =>  $insertbudgetdata->fourth_quarter
         //     ];
         // }
+        
+        
+        $checkUserName=InsertBudget::whereYear('year_budget',$YearNow)->where('user_id',$this->user_id)->first();
+        $this->UserName=$checkUserName->getUser->getOffice->office;
         
     }
     

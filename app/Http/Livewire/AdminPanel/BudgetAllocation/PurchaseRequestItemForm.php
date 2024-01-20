@@ -36,6 +36,7 @@ class PurchaseRequestItemForm extends Component
             $quarter;
     public  $UserId;
     public  $status_id;
+    public  $UserName;
     
     protected $listeners = [
         'PurchaseRequestItemId'
@@ -63,8 +64,9 @@ class PurchaseRequestItemForm extends Component
         $this->resetValidation();
     }
     
-    public function PurchaseRequestItemId($purchaseRequestId,$quarter_id)
+    public function PurchaseRequestItemId($purchaseRequestId,$quarter_id,$UserName)
     {
+        $this->UserName=$UserName;
         $this->purchaseRequestId=$purchaseRequestId;
         $this->quarter=$quarter_id;
         $this->QuarterId=$quarter_id;

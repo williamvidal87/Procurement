@@ -2,7 +2,7 @@
     <div class="container-fluid" style="font-size: 12px;">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Completely Delevered</h1>
+        <h1 class="h3 mb-2 text-gray-800">Completely Delivered</h1>
         
 
         <!-- DataTales Example -->

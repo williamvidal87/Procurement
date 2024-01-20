@@ -29,4 +29,9 @@ class InsertBudget extends Model
     {
         return $this->belongsTo(Status::class,'status_id');
     }
+    
+    public function getUser()
+    {
+        return $this->belongsTo(User::class,'user_id')->with('getOffice');
+    }
 }

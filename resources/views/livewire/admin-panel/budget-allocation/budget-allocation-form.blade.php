@@ -15,6 +15,8 @@
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
                         <div class="form-group">
+                            
+                            <label for="">Fiscal Year:</label>
                             <select wire:model="changeYear" wire:change="doSomething" style="max-width: 10rem" class="form-control form-control-sm" id="changeYear">
                                 
                                 @foreach ($years as $year)
@@ -22,6 +24,7 @@
                                 @endforeach
                             </select>
                         </div>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">{{ $this->UserName ?? 'none'}}</h6>
                         <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Total Approved Budget({{$this->changeYear ?? "none"}})</h6>
                     </div>
                     <!-- Card Body -->
