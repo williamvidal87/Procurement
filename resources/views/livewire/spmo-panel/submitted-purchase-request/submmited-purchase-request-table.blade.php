@@ -2,7 +2,7 @@
     <div class="container-fluid" style="font-size: 12px;">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Submmited Purchase Request</h1>
+        <h1 class="h3 mb-2 text-gray-800">Submitted Purchase Request</h1>
         
 
         <!-- DataTales Example -->
