@@ -14,7 +14,7 @@
     </a>
     <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded" style="font-size: 12px;">
-            <a class="collapse-item" href="admin-table">Admin</a>
+            <!-- <a class="collapse-item" href="admin-table">Admin</a> -->
             <a class="collapse-item" href="spmo-table">SPMO</a>
             <a class="collapse-item" href="user-table">Users</a>
         </div>

@@ -40,7 +40,7 @@
                                     <td>{{ $data->getStatus->status_name }}</td>
                                     <td style="min-width:10rem">
                                         @if($data->status_id==27)
-                                        <button style="width: 5.5rem"  class="py-0 btn btn-sm btn-secondary" wire:click="editAdminSubmmitedPurchaseRequest({{$data->insert_procured_id}},{{ $data->quarter_id }})"><i class="fas fa-eye"></i> Review</button>
+                                        <button style="width: 5.5rem"  class="py-0 btn btn-sm btn-secondary" wire:click="editAdminSubmmitedPurchaseRequest({{$data->id}},{{$data->insert_procured_id}},{{ $data->quarter_id }})"><i class="fas fa-eye"></i> Review</button>
                                         @endif
                                         @if($data->status_id==29&&$data->request_category_id==2)
                                         <button style="width: 5.5rem"  class="py-0 btn btn-sm btn-warning" wire:click="updateSvpStatus({{$data->id}})"><i class="fas fa-edit"></i> Update</button>

@@ -13,7 +13,8 @@ class ViewPurchaseRequestForm extends Component
             $office,
             $pr_no,
             $pr_date,
-            $purpose;
+            $purpose,
+            $quarter_id;
     public  $InsertProcured;
     protected $listeners = [
         'ViewPuchaseRequestData'
@@ -23,6 +24,7 @@ class ViewPurchaseRequestForm extends Component
     {
         $this->PurchaseRequestId=$PurchaseRequestId;
         $this->UserData=PurchaseRequest::where('id',$this->PurchaseRequestId)->first();
+        $this->quarter_id=$this->UserData->quarter_id;
         $this->office=$this->UserData->getUser->getOffice->office;
         $this->InsertProcured=$this->UserData->insert_procured_id;
         if ($this->UserData->purchase_request_date) {
@@ -30,6 +32,7 @@ class ViewPurchaseRequestForm extends Component
         }
         $this->pr_date=$this->UserData->purchase_request_date;
         $this->purpose=$this->UserData->getUser->getOffice->office." ".$this->UserData->getInsertProcured->getItemCategory->item_category;
+        
     }
 
     public function render()
@@ -38,7 +41,7 @@ class ViewPurchaseRequestForm extends Component
             'office' => $this->office,
             'pr_no' => $this->pr_no,
             'pr_date' => $this->pr_date,
-            'PurchaseRequestItem' => PurchaseRequestItem::where('insert_procured_id',$this->InsertProcured)->get(),
+            'PurchaseRequestItem' => PurchaseRequestItem::where('insert_procured_id',$this->InsertProcured)->where('quarter_id',$this->quarter_id)->get(),
             'total_all' => 0,
             'purpose' => $this->purpose,
             'UserName' => $this->UserData->getUser->name ?? "none",

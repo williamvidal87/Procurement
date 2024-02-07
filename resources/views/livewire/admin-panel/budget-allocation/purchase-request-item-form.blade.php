@@ -1,6 +1,6 @@
 <div>
     <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLabel">Purchase Request</h1>
+        <h1 class="modal-title" id="exampleModalLabel">Budget Allocation - Add Items</h1>
         <button class="close" data-dismiss="modal" aria-label="Close" wire:click="closePurchaseRequestItemForm"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body">
@@ -14,7 +14,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Purchase Request</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Budget Allocation - Add Items</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">

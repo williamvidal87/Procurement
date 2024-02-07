@@ -36,8 +36,9 @@ class AdminSubmittedPurchaseRequestForm extends Component
         'editAdminSubmmitedPurchaseRequestData'
     ];
     
-    public function editAdminSubmmitedPurchaseRequestData($InsertProcuredId,$QuarterId)
+    public function editAdminSubmmitedPurchaseRequestData($PurchaseRequestId,$InsertProcuredId,$QuarterId)
     {
+        $this->PurchaseRequestId=$PurchaseRequestId;
         $this->InsertProcuredId=$InsertProcuredId;
         $this->QuarterId=$QuarterId;
         $InsertProcuredData=InsertProcured::where('id',$this->InsertProcuredId)->first();
@@ -57,10 +58,9 @@ class AdminSubmittedPurchaseRequestForm extends Component
             ];
         }
         
-        $PurchaseRequestData=PurchaseRequest::where('insert_procured_id',$this->InsertProcuredId)->first();
+        $PurchaseRequestData=PurchaseRequest::where('id',$this->PurchaseRequestId)->first();
         $this->documents = $PurchaseRequestData['document'];
         $this->documents= json_decode($this->documents , true);
-        $this->PurchaseRequestId=$PurchaseRequestData['id'];
         $this->purpose=$PurchaseRequestData['purpose'];
     }
     

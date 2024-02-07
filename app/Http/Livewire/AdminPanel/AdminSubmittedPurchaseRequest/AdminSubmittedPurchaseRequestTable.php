@@ -21,10 +21,10 @@ class AdminSubmittedPurchaseRequestTable extends Component
         ])->with('getInsertProcured','getQuarter','getStatus','getUser','getPrNumber');
     }
 
-    public function editAdminSubmmitedPurchaseRequest($insert_procured_id,$quarter_id)
+    public function editAdminSubmmitedPurchaseRequest($PurchaseRequestId,$insert_procured_id,$quarter_id)
     {
         $this->emit('openAdminSubmmitedPurchaseRequestModal');
-        $this->emit('editAdminSubmmitedPurchaseRequestData',$insert_procured_id,$quarter_id);
+        $this->emit('editAdminSubmmitedPurchaseRequestData',$PurchaseRequestId,$insert_procured_id,$quarter_id);
     }
     
     public function updateSvpStatus($PurchaseRequestId)

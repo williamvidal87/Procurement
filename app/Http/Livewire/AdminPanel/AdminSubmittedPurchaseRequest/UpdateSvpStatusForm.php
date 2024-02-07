@@ -38,7 +38,7 @@ class UpdateSvpStatusForm extends Component
         $data = ([
             'status_id'                     => 17,
         ]);
-        PurchaseRequest::find($this->PurchaseRequestId)->update($data);
+        // PurchaseRequest::find($this->PurchaseRequestId)->update($data);
         $this->emit('alert_update');
         $this->emit('closeSvpStatusModal');
 

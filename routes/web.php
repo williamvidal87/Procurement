@@ -51,7 +51,7 @@ Route::middleware([
 
 
     // Admin Panel
-    Route::get('/admin-table', AdminTable::class)->name('admin-table')->middleware('checkRulepermissionadmin')->middleware('checkpassword');
+    // Route::get('/admin-table', AdminTable::class)->name('admin-table')->middleware('checkRulepermissionadmin')->middleware('checkpassword');
     Route::get('/spmo-table', SpmoTable::class)->name('spmo-table')->middleware('checkRulepermissionadmin')->middleware('checkpassword');
     Route::get('/user-table', UserTable::class)->name('user-table')->middleware('checkRulepermissionadmin')->middleware('checkpassword');
     Route::get('/budget-allocation', BudgetAllocationTable::class)->name('budget-allocation')->middleware('checkRulepermissionadmin')->middleware('checkpassword');
